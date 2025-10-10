@@ -82,8 +82,8 @@ public class DestroyBubbleFusionN : MonoBehaviour {
         if (newColorIndex1 != newColorIndex2) nextStage--;
         Debug.Log("breaking");
         // Spawn the two smaller bubbles with their determined colors.
-        SpawnBubble(spawnPos+new Vector3(1,0,0), nextStage, 1, parentYVel, newColorIndex1);  // right bubble
-        SpawnBubble(spawnPos+ new Vector3(-1, 0, 0), nextStage, -1, parentYVel, newColorIndex2); // left bubble
+        SpawnBubble(spawnPos+new Vector3(0,0,0), nextStage, 1, parentYVel, newColorIndex1);  // right bubble
+        SpawnBubble(spawnPos+ new Vector3(0, 0, 0), nextStage, -1, parentYVel, newColorIndex2); // left bubble
 
         Destroy(gameObject);
     }

@@ -34,6 +34,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        
         if (Mathf.Abs(transform.position.x) > 7.5 && col.isTrigger) BoundX();
         if (col.isTrigger&&(transform.position.y < 3.71||transform.position.y>9.6)) BoundY();
         rb.linearVelocity = new Vector2(currentVelocityX, rb.linearVelocity.y);
@@ -41,6 +42,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
             if (transform.position.x >= 0) rb.linearVelocityX = -3f;
             else rb.linearVelocityX = 3f;
         }
+        
         float dampingForce = -rb.linearVelocity.y * yAxisDamping;
         rb.AddForce(new Vector2(0, dampingForce));
         CheckForDeactivation();
@@ -81,8 +83,9 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
 
     private void CheckForDeactivation() {
         if (transform.position.y < maxY && rb.linearVelocity.y > 0 && rb.linearVelocity.y < YVelocityDeactivationThreshold) {
-            this.enabled = false;
+            yAxisDamping = 0;
         }
+        
     }
 
     public void SetupStageVisuals() {
@@ -113,7 +116,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         ChangeDirection();
     }
     public void BoundY() {
-        rb.linearVelocityY = -rb.linearVelocityY;
+        rb.linearVelocityY = 0;
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         combo = false;

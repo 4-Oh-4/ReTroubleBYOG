@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0356b10ea102248959602a5870d3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 7017203709436826739}
   UpwardForce: 3
   bubblePrefab: {fileID: 801368911612918048}
 --- !u!114 &8169820143909198698
@@ -184,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleHeight: {fileID: 5640473460798057813}
   bubblePrefab: {fileID: 801368911612918048}
-  UpwardForce: 5
+  UpwardForce: 3
   colorIndex: -1
 --- !u!114 &5640473460798057813
 MonoBehaviour:
