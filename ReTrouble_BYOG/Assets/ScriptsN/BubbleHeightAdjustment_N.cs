@@ -73,7 +73,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
     }
     public void ChangeDirection() {
         velocityX = -(velocityX);
-        
+        rb.linearVelocityX = velocityX;
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Floor")) return;
