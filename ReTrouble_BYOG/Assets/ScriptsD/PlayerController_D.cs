@@ -9,6 +9,10 @@ public class PlayerController_D : MonoBehaviour {
     public bool useSmoothing = true;
     public float acceleration = 10f;
 
+    [Header("Powerup Settings")]
+    [SerializeField] private GameObject shieldVisual;
+    public bool isShielded { get; private set; } = false; // Public to read, private to set
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private float currentVelocityX;
@@ -38,5 +42,18 @@ public class PlayerController_D : MonoBehaviour {
             scale.x = Mathf.Sign(moveInput.x) * Mathf.Abs(scale.x);
             transform.localScale = scale;
         }
+    }
+
+
+    public void EnableShield()
+    {
+        isShielded = true;
+        shieldVisual.SetActive(true);
+    }
+
+    public void DisableShield()
+    {
+        isShielded = false;
+        shieldVisual.SetActive(false);
     }
 }
