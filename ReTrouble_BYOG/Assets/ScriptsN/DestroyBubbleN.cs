@@ -8,8 +8,8 @@ public class DestroyBubbleN : MonoBehaviour
     private int stage;
     private float offset;
     public int colorIndex=-1;
-    private Color[] colorArray = { Color.red, Color.green, Color.blue };
-
+    private Color[] colorArray = { Color.red, Color.green, Color.cyan};
+    
     private void Start() {
         stage = bubbleHeight.getStage();
         if (colorIndex == -1) {
