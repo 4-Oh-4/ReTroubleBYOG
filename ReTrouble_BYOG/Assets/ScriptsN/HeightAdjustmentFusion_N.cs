@@ -34,13 +34,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (Mathf.Abs(transform.position.x) > 7.5 && col.isTrigger) BoundX();
-        if (col.isTrigger&&(transform.position.y < 3.71||transform.position.y>9.6)) BoundY();
         rb.linearVelocity = new Vector2(currentVelocityX, rb.linearVelocity.y);
-        if (Mathf.Abs(rb.linearVelocityX) < 0.5f) {
-            if (transform.position.x >= 0) rb.linearVelocityX = -3f;
-            else rb.linearVelocityX = 3f;
-        }
         float dampingForce = -rb.linearVelocity.y * yAxisDamping;
         rb.AddForce(new Vector2(0, dampingForce));
         CheckForDeactivation();
@@ -62,8 +56,8 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         // --- MODIFIED LOGIC HERE ---
         // If this bubble was spawned from a collision, start the grace period.
         if (spawnedAfterCollision) {
-            //col.isTrigger = false;
-            StartCoroutine(GracePeriodCoroutine());
+            col.isTrigger = false;
+            //StartCoroutine(GracePeriodCoroutine());
         }
     }
 
@@ -73,7 +67,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         if (col != null) col.isTrigger = true;
 
         // 2. Wait for 1 second. (Using WaitForSeconds is generally better for gameplay timers).
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
 
         // 3. Revert the collider back to a normal, solid collider.
         if (col != null) col.isTrigger = false;
@@ -109,12 +103,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     public void ChangeDirection() {
         currentVelocityX = -currentVelocityX;
     }
-    public void BoundX() {
-        ChangeDirection();
-    }
-    public void BoundY() {
-        rb.linearVelocityY = -rb.linearVelocityY;
-    }
+
     private void OnCollisionEnter2D(Collision2D collision) {
         combo = false;
         if (collision.gameObject.CompareTag("Floor")) return;
