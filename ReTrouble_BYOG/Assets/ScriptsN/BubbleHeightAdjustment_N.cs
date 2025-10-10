@@ -20,6 +20,10 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
     private float maxY;
     private float currentVelocityX;
 
+    private Vector2 savedVelocity;
+    private float savedAngularVelocity;
+    private bool isFrozen = false;
+
     // ? NEW: A flag to prevent initializing more than once.
     private bool hasBeenInitialized = false;
 
@@ -33,6 +37,13 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+
+        if (isFrozen)
+        {
+            return;
+        }
+
+
         rb.linearVelocity = new Vector2(currentVelocityX, rb.linearVelocity.y);
         float dampingForce = -rb.linearVelocity.y * yAxisDamping;
         rb.AddForce(new Vector2(0, dampingForce));
@@ -90,10 +101,43 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Floor")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
+            //New Sheild Check
+            PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
+            if (player != null && player.isShielded)
+            {
+                player.DisableShield();
+                //Destroy(gameObject);
+                return;
+            }
+
+
             Destroy(gameObject);
             Debug.Log("health--");
             return;
         }
         ChangeDirection();
+    }
+
+    // --- Powerup Methods ---
+    public void Freeze()
+    {
+        if (rb == null) return;
+        isFrozen = true;
+        savedVelocity = rb.linearVelocity;
+        savedAngularVelocity = rb.angularVelocity;
+        rb.bodyType = RigidbodyType2D.Static; // This completely stops all physics movement
+                                              // Optional: Change color to show it's frozen
+        GetComponent<SpriteRenderer>().color = Color.blue;
+    }
+
+    public void Unfreeze()
+    {
+        if (rb == null) return;
+        isFrozen = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.linearVelocity = savedVelocity;
+        rb.angularVelocity = savedAngularVelocity;
+        // Restore original color - relies on DestroyBubbleN to have the color
+        GetComponent<DestroyBubbleN>().SetColor(GetComponent<DestroyBubbleN>().colorIndex);
     }
 }
