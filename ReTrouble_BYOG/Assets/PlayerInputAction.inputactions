@@ -24,9 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeColor",
+                    "name": "ChangeColorPositive",
                     "type": "Button",
                     "id": "3860b984-e7b9-44b6-9a89-27151f2129f0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeColorNegative",
+                    "type": "Button",
+                    "id": "d6d16500-eeec-419e-92a6-e0b459ca2fdf",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -107,7 +116,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeColor",
+                    "action": "ChangeColorPositive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d16ce83-730c-44d3-8c46-43c8d1542d78",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeColorNegative",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
