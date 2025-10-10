@@ -60,7 +60,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         }
     }
 
-    private void SetupStageVisuals() {
+    public void SetupStageVisuals() {
         switch (Stage) {
             case 1:
                 transform.localScale = new Vector2(2.1f, 2.1f);

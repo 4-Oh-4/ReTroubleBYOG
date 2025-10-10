@@ -20,6 +20,11 @@ public class ArrowDestroy : MonoBehaviour
                 GetComponent<BoxCollider2D>().enabled = false;
                 collision.gameObject.GetComponent<DestroyBubbleN>().DestroyBubble();
                 DestroyArrow();
+            } else {
+                int initialStage = collision.gameObject.GetComponent<BubbleHeightAdjustment_N>().Stage;
+                if(initialStage>1)collision.gameObject.GetComponent<BubbleHeightAdjustment_N>().Stage = initialStage-1;
+                collision.gameObject.GetComponent<BubbleHeightAdjustment_N>().SetupStageVisuals();
+                DestroyArrow();
             }
         }
         if (collision.CompareTag("Ceiling")) {
