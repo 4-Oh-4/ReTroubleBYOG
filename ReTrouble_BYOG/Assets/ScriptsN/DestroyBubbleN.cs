@@ -35,10 +35,26 @@ public class DestroyBubbleN : MonoBehaviour {
         } else {
             GM.GetComponent<ComboManager_N>().ResetCombo();
         }
-        int i = Random.Range(1, 8);
-        if (i == 5 && GM.GetComponent<PowerManger_N>().hasPowerUp==false) {
+        int i = Random.Range(1, 4);
+        if (i == 1 && PowerManger_N.Instance != null)
+        {
+            PowerManger_N.Instance.SpawnRandomPowerup(transform.position);
             Debug.Log("PowerUP drop");
         }
+
+        // --- TEMPORARY DEBUGGING CODE ---
+        //Debug.Log("Attempting to spawn a powerup now.");
+        //if (PowerManger_N.Instance != null)
+        //{
+        //    PowerManger_N.Instance.SpawnRandomPowerup(transform.position);
+        //}
+        //else
+        //{
+        //    Debug.LogError("PowerManger_N.Instance is NULL. Cannot spawn powerup!");
+        //}
+        // --- END OF TEMP CODE ---
+
+
         // Spawn the two smaller bubbles
         SpawnBubble(spawnPos, nextStage, 1, parentYVel);   // right
         SpawnBubble(spawnPos, nextStage, -1, parentYVel);  // left
