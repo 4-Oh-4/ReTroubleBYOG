@@ -16,7 +16,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
 
     [Header("Deactivation Logic")]
     [SerializeField] private float YVelocityDeactivationThreshold = 0.1f;
-
+    public bool combo = false;
     private float maxY;
     private float currentVelocityX;
 
@@ -40,9 +40,9 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
     }
 
     // This method is now used for ALL bubbles (initial and spawned).
-    public void Initialize(int newStage, int direction) {
+    public void Initialize(int newStage, int direction,bool spawnedAfterCollision=false) {
         if (hasBeenInitialized) return;
-
+        if (spawnedAfterCollision) combo = true;
         Stage = newStage;
         currentVelocityX = initialSpeed * direction;
         SetupStageVisuals();
@@ -86,13 +86,14 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        combo = false;
         if (collision.gameObject.CompareTag("Floor")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
             Destroy(gameObject);
+            Debug.Log("health--");
             return;
         }
-
         ChangeDirection();
     }
 }

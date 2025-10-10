@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 355963593}
   m_Layer: 0
   m_Name: GM
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1516,6 +1516,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 84335948997586726, guid: 3b72ce00aa4c620418035bce0475e4d5, type: 3}
   canSpawn: 1
   arrowSpeed: 6
+  frenzy: 0
 --- !u!1001 &443162090769557971
 PrefabInstance:
   m_ObjectHideFlags: 0
