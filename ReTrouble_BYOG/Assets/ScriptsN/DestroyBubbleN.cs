@@ -4,14 +4,14 @@ using UnityEngine;
 public class DestroyBubbleN : MonoBehaviour {
     [SerializeField] private BubbleHeightAdjustment_N bubbleHeight;
     [SerializeField] private GameObject bubblePrefab; // Renamed for clarity
-
+    [SerializeField] private float UpwardForce = 3f;
     public int colorIndex = -1;
     private Color[] colorArray = { Color.red, Color.green, Color.cyan };
 
     private void Start() {
         if (colorIndex == -1) {
             colorIndex = Random.Range(0, 3);
-            GetComponent<SpriteRenderer>().material.color = colorArray[colorIndex];
+            GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
         }
     }
 
@@ -57,7 +57,7 @@ public class DestroyBubbleN : MonoBehaviour {
         rb.linearVelocity = new Vector2(bubble.initialSpeed * dir, inheritedY);
 
         // Optional: short upward force pulse to make it feel springy
-        rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * UpwardForce, ForceMode2D.Impulse);
     }
 
 
@@ -66,7 +66,7 @@ public class DestroyBubbleN : MonoBehaviour {
 
     public void SetColor(int i) {
         colorIndex = i;
-        GetComponent<SpriteRenderer>().material.color = colorArray[colorIndex];
+        GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
     }
 
 }
