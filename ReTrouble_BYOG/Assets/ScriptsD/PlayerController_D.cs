@@ -1,31 +1,42 @@
+// PlayerMovement_Events.cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController_D : MonoBehaviour
-{
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerController_D : MonoBehaviour {
+    [Header("Movement Settings")]
+    public float moveSpeed = 8f;
+    public bool useSmoothing = true;
+    public float acceleration = 10f;
 
-    private float movementX;
-    [SerializeField] private float speed = 0.0f;
+    private Rigidbody2D rb;
+    private Vector2 moveInput;
+    private float currentVelocityX;
 
-
-    private Rigidbody2D playerRb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        playerRb = GetComponent<Rigidbody2D>();
-
+    void Awake() {
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
+    // This function name MUST match the action name prefixed with "On" (e.g., OnMove)
+    public void OnMove(InputAction.CallbackContext context) {
+        // Read the Vector2 from input
+        moveInput = context.ReadValue<Vector2>();
     }
 
-    // Update is called once per frame
-    private void FixedUpdate()
-    {
-        Vector2 movement = new Vector2 (movementX, 0);
-        playerRb.AddForce (movement * speed);
+    void FixedUpdate() {
+        // Only use X axis for horizontal movement
+        float targetX = moveInput.x * moveSpeed;
+        float newVX = useSmoothing
+            ? Mathf.SmoothDamp(rb.linearVelocity.x, targetX, ref currentVelocityX, 1f / acceleration)
+            : targetX;
+
+        rb.linearVelocity = new Vector2(newVX, rb.linearVelocity.y);
+
+        // Optional: flip sprite based on direction
+        if (Mathf.Abs(moveInput.x) > 0.01f) {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(moveInput.x) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }
     }
 }

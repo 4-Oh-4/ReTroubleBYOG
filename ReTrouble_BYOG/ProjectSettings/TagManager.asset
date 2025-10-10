@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - PowerUps
   - ColorTile
+  - Ceiling
   layers:
   - Default
   - TransparentFX

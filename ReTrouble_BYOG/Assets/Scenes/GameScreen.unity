@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 174789237}
   m_Layer: 0
   m_Name: Ceiling
-  m_TagString: Bubble
+  m_TagString: Ceiling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1098,6 +1098,7 @@ GameObject:
   - component: {fileID: 1983022122}
   - component: {fileID: 1983022121}
   - component: {fileID: 1983022120}
+  - component: {fileID: 1983022124}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1169,7 +1170,7 @@ Transform:
   m_GameObject: {fileID: 1983022117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.845412, y: 3.141, z: 0}
+  m_LocalPosition: {x: -4.69, y: 3.141, z: 0}
   m_LocalScale: {x: 0.61, y: 0.96, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1187,7 +1188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51198d9b0546ee41b11601be4f8029f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  moveSpeed: 6
+  useSmoothing: 0
+  acceleration: 5
 --- !u!114 &1983022121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,8 +1203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_NotificationBehavior: 0
+  m_Actions: {fileID: -944628639613478452, guid: 9a7e856b2f1ace941b8a92cac2bc2291, type: 3}
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1212,10 +1215,46 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983022120}
+        m_TargetAssemblyTypeName: PlayerController_D, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5c665f05-8781-47d5-9add-9a83b8cc4e9d
+    m_ActionName: 'Movement/Move[/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983022124}
+        m_TargetAssemblyTypeName: SpawnArrow_N, Assembly-CSharp
+        m_MethodName: SpawnArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 492bdbd1-9d33-4deb-be41-31ffd2678f1a
+    m_ActionName: 'Movement/Shoot[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3860b984-e7b9-44b6-9a89-27151f2129f0
+    m_ActionName: 'Movement/ChangeColor[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!50 &1983022122
@@ -1291,6 +1330,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1983022124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983022117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4c58e01ea3814881cc4baf121fbbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 84335948997586726, guid: 3b72ce00aa4c620418035bce0475e4d5, type: 3}
+  canSpawn: 1
+  arrowSpeed: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
