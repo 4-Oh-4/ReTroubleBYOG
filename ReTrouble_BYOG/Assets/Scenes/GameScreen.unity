@@ -1047,7 +1047,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6528301, g: 0.26482728, b: 0.26482728, a: 1}
+  m_Color: {r: 0.95841205, g: 0.4198113, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1145,9 +1145,37 @@ MonoBehaviour:
     m_ActionId: 492bdbd1-9d33-4deb-be41-31ffd2678f1a
     m_ActionName: 'Movement/Shoot[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1983022124}
+        m_TargetAssemblyTypeName: SpawnArrow_N, Assembly-CSharp
+        m_MethodName: ChangeColorPositive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3860b984-e7b9-44b6-9a89-27151f2129f0
     m_ActionName: 'Movement/ChangeColor[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983022124}
+        m_TargetAssemblyTypeName: SpawnArrow_N, Assembly-CSharp
+        m_MethodName: ChangeColorNegative
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d6d16500-eeec-419e-92a6-e0b459ca2fdf
+    m_ActionName: 'Movement/ChangeColorNegative[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
