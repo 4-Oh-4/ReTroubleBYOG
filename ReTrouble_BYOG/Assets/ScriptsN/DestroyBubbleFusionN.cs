@@ -1,12 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
-public class DestroyBubbleN : MonoBehaviour {
-    [SerializeField] private BubbleHeightAdjustment_N bubbleHeight;
+public class DestroyBubbleFusionN : MonoBehaviour {
+    [SerializeField] private HeightAdjustmentFusion_N bubbleHeight;
     [SerializeField] private GameObject bubblePrefab; // Renamed for clarity
     [SerializeField] private float UpwardForce = 3f;
     public int colorIndex = -1;
-    private Color[] colorArray = { Color.red, Color.green, Color.blue };
+    private Color[] colorArray = { Color.red, Color.green, Color.blue,Color.yellow, Color.cyan, Color.magenta };
     GameObject GM;
     private void Start() {
         if (colorIndex == -1) {
@@ -36,7 +36,7 @@ public class DestroyBubbleN : MonoBehaviour {
             GM.GetComponent<ComboManager_N>().ResetCombo();
         }
         int i = Random.Range(1, 8);
-        if (i == 5 && GM.GetComponent<PowerManger_N>().hasPowerUp==false) {
+        if (i == 5 && GM.GetComponent<PowerManger_N>().hasPowerUp == false) {
             Debug.Log("PowerUP drop");
         }
         // Spawn the two smaller bubbles
@@ -49,14 +49,14 @@ public class DestroyBubbleN : MonoBehaviour {
     private void SpawnBubble(Vector3 pos, int nextStage, int dir, float parentYVel) {
         GameObject newBubble = Instantiate(bubblePrefab, pos, Quaternion.identity);
 
-        var bubble = newBubble.GetComponent<BubbleHeightAdjustment_N>();
-        var destroyer = newBubble.GetComponent<DestroyBubbleN>();
+        var bubble = newBubble.GetComponent<HeightAdjustmentFusion_N>();
+        var destroyer = newBubble.GetComponent<DestroyBubbleFusionN>();
 
         // Color
         destroyer.SetColor(colorIndex);
 
         // Initialize stage & visuals
-        bubble.Initialize(nextStage, dir,true);
+        bubble.Initialize(nextStage, dir, true);
 
         // Get the Rigidbody
         Rigidbody2D rb = newBubble.GetComponent<Rigidbody2D>();
@@ -71,7 +71,7 @@ public class DestroyBubbleN : MonoBehaviour {
     }
 
 
-    
+
 
 
     public void SetColor(int i) {
