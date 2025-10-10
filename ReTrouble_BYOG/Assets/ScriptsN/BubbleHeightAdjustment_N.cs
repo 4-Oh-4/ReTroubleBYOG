@@ -90,6 +90,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Floor")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
+            collision.gameObject.GetComponent<HealthManager_A>()?.DecreaseHealth();
             Destroy(gameObject);
             Debug.Log("health--");
             return;
