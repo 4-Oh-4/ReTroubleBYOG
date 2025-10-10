@@ -21,10 +21,12 @@ public class DestroyBubbleN : MonoBehaviour
             GameObject bubble1 = Instantiate(bubble);
             bubble1.transform.localPosition = transform.localPosition - new Vector3(0, 0,0);
             bubble1.GetComponent<BubbleHeightAdjustment_N>().Stage=(stage + 1);
-
+            bubble1.GetComponent<BubbleHeightAdjustment_N>().SetupStage(stage+1);
             GameObject bubble2 = Instantiate(bubble);
-            bubble2.GetComponent<BubbleHeightAdjustment_N>().Stage=(stage + 1); 
             bubble2.transform.localPosition = transform.localPosition + new Vector3(0, 0, 0);
+            bubble2.GetComponent<BubbleHeightAdjustment_N>().Stage=(stage + 1);
+            bubble2.GetComponent<BubbleHeightAdjustment_N>().SetupStage(stage + 1);
+
             bubble1.GetComponent<BubbleHeightAdjustment_N>().ChangeDirection();
             Destroy(gameObject);
         }
