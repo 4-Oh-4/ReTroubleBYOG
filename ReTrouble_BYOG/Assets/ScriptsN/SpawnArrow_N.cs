@@ -19,7 +19,7 @@ public class SpawnArrow_N : MonoBehaviour
     }
     public void SpawnArrow(InputAction.CallbackContext context) {
         
-        if (canSpawn && context.performed) {
+        if (canSpawn && context.phase==InputActionPhase.Performed) {
             GameObject arrow=Instantiate(arrowPrefab);
             arrow.transform.localPosition = transform.localPosition;
             arrow.GetComponent<Rigidbody2D>().linearVelocityY = arrowSpeed;
