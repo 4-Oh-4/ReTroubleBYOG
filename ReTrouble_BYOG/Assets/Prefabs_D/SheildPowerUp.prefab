@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5625c8ba1dfa754cbf37fbdc7a4f68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   lifetimeOnFloor: 6
   blinkDuration: 2
   blinkSpeed: 0.2

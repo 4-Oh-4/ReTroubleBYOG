@@ -106,7 +106,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
             if (player != null && player.isShielded)
             {
                 player.DisableShield();
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 return;
             }
 
