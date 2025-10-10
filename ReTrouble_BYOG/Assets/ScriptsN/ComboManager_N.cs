@@ -17,7 +17,7 @@ public class ComboManager_N : MonoBehaviour
         combo ++;
         score += combo;
         Debug.Log("I score" + score.ToString());
-        if (score == frenzyCondition) frenzySwitch.EnableFrenzy();
+        if (score >= frenzyCondition) frenzySwitch.EnableFrenzy();
     }
 
 }
