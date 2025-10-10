@@ -15,7 +15,8 @@ public class ArrowDestroy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Bubble")) {
-            
+            GetComponent<BoxCollider2D>().enabled = false;
+            collision.gameObject.GetComponent<DestroyBubbleN>().DestroyBubble();
             DestroyArrow();
         }
         if (collision.CompareTag("Ceiling")) {

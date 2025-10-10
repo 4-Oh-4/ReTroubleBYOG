@@ -10,19 +10,19 @@ public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
     [SerializeField] private float yAxisDamping = 0.5f; // Our new custom damping for the Y-axis
 
     [Header("Stage Settings")]
-    [SerializeField] private int Stage = 1;
+    [SerializeField] public int Stage = 1;
     [SerializeField] private float maxYStage1;
     [SerializeField] private float maxYStage2;
     [SerializeField] private float maxYStage3;
 
     [Header("Deactivation Logic")]
     [SerializeField] private float YVelocityDeactivationThreshold = 0.1f;
-
+   
     private float maxY;
 
     private void Start() {
         // Set the size and max height based on the stage
-        SetupStage();
+        SetupStage(Stage);
 
         // Set the initial velocity once
         rb.linearVelocity = new Vector2(velocityX, 0);
@@ -37,7 +37,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
         // This force opposes the current Y velocity, slowing it down.
         float dampingForce = -rb.linearVelocity.y * yAxisDamping;
         rb.AddForce(new Vector2(0, dampingForce));
-
+        rb.linearVelocityX = velocityX;
         // 3. Check the condition to disable this script
         CheckForDeactivation();
     }
@@ -52,7 +52,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
         }
     }
 
-    private void SetupStage() {
+    public void SetupStage(int Stage) {
         switch (Stage) {
             case 1:
                 transform.localScale = new Vector2(2.1f, 2.1f);
@@ -67,5 +67,16 @@ public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
                 maxY = maxYStage3;
                 break;
         }
+    }
+    public int getStage() {
+        return Stage;
+    }
+    public void ChangeDirection() {
+        velocityX = -(velocityX);
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Floor")) return;
+        ChangeDirection();
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpawnArrow_N : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class SpawnArrow_N : MonoBehaviour
     {
         
     }
-    public void SpawnArrow() {
-        if (canSpawn) {
-            
+    public void SpawnArrow(InputAction.CallbackContext context) {
+        
+        if (canSpawn && context.performed) {
             GameObject arrow=Instantiate(arrowPrefab);
             arrow.transform.localPosition = transform.localPosition;
             arrow.GetComponent<Rigidbody2D>().linearVelocityY = arrowSpeed;
