@@ -453,9 +453,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355963593}
+  - component: {fileID: 355963594}
+  - component: {fileID: 355963595}
   m_Layer: 0
   m_Name: GM
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -475,6 +477,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355963594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355963592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150fa70596c94d246b8dbe8c92809881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPowerUp: 0
+--- !u!114 &355963595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355963592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd1b0fdfa7e5e04dac2074d9def8d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combo: 0
+  score: 0
+  frenzySwitch: {fileID: 1983022124}
 --- !u!1 &485990243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1546,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 84335948997586726, guid: 3b72ce00aa4c620418035bce0475e4d5, type: 3}
   canSpawn: 1
   arrowSpeed: 6
+  frenzy: 0
 --- !u!1001 &443162090769557971
 PrefabInstance:
   m_ObjectHideFlags: 0

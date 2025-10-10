@@ -7,12 +7,13 @@ public class DestroyBubbleN : MonoBehaviour {
     [SerializeField] private float UpwardForce = 3f;
     public int colorIndex = -1;
     private Color[] colorArray = { Color.red, Color.green, Color.cyan };
-
+    GameObject GM;
     private void Start() {
         if (colorIndex == -1) {
             colorIndex = Random.Range(0, 3);
             GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
         }
+        GM = GameObject.FindGameObjectWithTag("GM");
     }
 
     public void DestroyBubble() {
@@ -28,7 +29,16 @@ public class DestroyBubbleN : MonoBehaviour {
 
         // Get upward motion from current bubble
         float parentYVel = bubbleHeight.GetComponent<Rigidbody2D>().linearVelocity.y;
-
+        if (bubbleHeight.combo) {
+            GM.GetComponent<ComboManager_N>().IncreaseCombo();
+            //Debug.Log("Combo");
+        } else {
+            GM.GetComponent<ComboManager_N>().ResetCombo();
+        }
+        int i = Random.Range(1, 8);
+        if (i == 5 && GM.GetComponent<PowerManger_N>().hasPowerUp==false) {
+            Debug.Log("PowerUP drop");
+        }
         // Spawn the two smaller bubbles
         SpawnBubble(spawnPos, nextStage, 1, parentYVel);   // right
         SpawnBubble(spawnPos, nextStage, -1, parentYVel);  // left
@@ -46,7 +56,7 @@ public class DestroyBubbleN : MonoBehaviour {
         destroyer.SetColor(colorIndex);
 
         // Initialize stage & visuals
-        bubble.Initialize(nextStage, dir);
+        bubble.Initialize(nextStage, dir,true);
 
         // Get the Rigidbody
         Rigidbody2D rb = newBubble.GetComponent<Rigidbody2D>();

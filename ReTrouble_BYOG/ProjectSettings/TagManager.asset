@@ -10,6 +10,7 @@ TagManager:
   - PowerUps
   - ColorTile
   - Ceiling
+  - GM
   layers:
   - Default
   - TransparentFX
