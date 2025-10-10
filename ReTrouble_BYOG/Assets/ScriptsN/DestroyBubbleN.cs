@@ -6,7 +6,7 @@ public class DestroyBubbleN : MonoBehaviour {
     [SerializeField] private GameObject bubblePrefab; // Renamed for clarity
     [SerializeField] private float UpwardForce = 3f;
     public int colorIndex = -1;
-    private Color[] colorArray = { Color.red, Color.green, Color.cyan };
+    private Color[] colorArray = { Color.red, Color.green, Color.blue };
     GameObject GM;
     private void Start() {
         if (colorIndex == -1) {
