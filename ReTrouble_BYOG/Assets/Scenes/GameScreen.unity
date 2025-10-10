@@ -505,6 +505,7 @@ MonoBehaviour:
   combo: 0
   score: 0
   frenzySwitch: {fileID: 1983022124}
+  frenzyCondition: 3
 --- !u!1 &485990243
 GameObject:
   m_ObjectHideFlags: 0
