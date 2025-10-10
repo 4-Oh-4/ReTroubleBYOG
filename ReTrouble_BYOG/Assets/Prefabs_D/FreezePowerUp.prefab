@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8563429481822158118}
   - component: {fileID: 6641152718142234851}
   - component: {fileID: 3424279742360556221}
-  - component: {fileID: 8059415790883347197}
   - component: {fileID: 8817111114328815495}
   m_Layer: 0
   m_Name: FreezePowerUp
@@ -154,42 +153,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!58 &8059415790883347197
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2551447472886066647}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.7
 --- !u!114 &8817111114328815495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  lifetimeOnFloor: 6
+  hoverHeight: 2.85
+  hoverLifetime: 8
   blinkDuration: 2
   blinkSpeed: 0.2
