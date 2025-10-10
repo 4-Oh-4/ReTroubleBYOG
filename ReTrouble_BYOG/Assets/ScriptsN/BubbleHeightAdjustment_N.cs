@@ -1,58 +1,66 @@
 using UnityEngine;
 
-public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
-{
+public class BubbleHeightAdjustment_N : MonoBehaviour {
     [Header("Component References")]
     [SerializeField] private Rigidbody2D rb;
 
     [Header("Movement Settings")]
-    [SerializeField] private float velocityX = 3f;
-    [SerializeField] private float yAxisDamping = 0.5f; // Our new custom damping for the Y-axis
+    [SerializeField] public float initialSpeed = 3f;
+    [SerializeField] private float yAxisDamping = 0.5f;
 
     [Header("Stage Settings")]
-    [SerializeField] public int Stage = 1;
+    public int Stage = 1;
     [SerializeField] private float maxYStage1;
     [SerializeField] private float maxYStage2;
     [SerializeField] private float maxYStage3;
 
     [Header("Deactivation Logic")]
     [SerializeField] private float YVelocityDeactivationThreshold = 0.1f;
-   
+
     private float maxY;
+    private float currentVelocityX;
 
+    // ? NEW: A flag to prevent initializing more than once.
+    private bool hasBeenInitialized = false;
+
+    // ? MODIFIED: Start() now handles the VERY FIRST bubble.
     private void Start() {
-        // Set the size and max height based on the stage
-        SetupStage(Stage);
-
-        // Set the initial velocity once
-        rb.linearVelocity = new Vector2(velocityX, 0);
+        // If Initialize() has not been called externally (i.e., this is the first bubble)
+        // then set it up with default values.
+        if (!hasBeenInitialized) {
+            Initialize(Stage, 1); // Default to stage 1, moving right
+        }
     }
 
-    // All physics calculations should happen in FixedUpdate
     private void FixedUpdate() {
-        // 1. Enforce a constant X velocity while preserving the Y velocity
-        //rb.linearVelocity = new Vector2(velocityX, rb.linearVelocity.y);
-
-        // 2. Apply our custom linear damping only on the Y-axis
-        // This force opposes the current Y velocity, slowing it down.
+        rb.linearVelocity = new Vector2(currentVelocityX, rb.linearVelocity.y);
         float dampingForce = -rb.linearVelocity.y * yAxisDamping;
         rb.AddForce(new Vector2(0, dampingForce));
-        rb.linearVelocityX = velocityX;
-        // 3. Check the condition to disable this script
         CheckForDeactivation();
     }
 
+    // This method is now used for ALL bubbles (initial and spawned).
+    public void Initialize(int newStage, int direction) {
+        if (hasBeenInitialized) return;
+
+        Stage = newStage;
+        currentVelocityX = initialSpeed * direction;
+        SetupStageVisuals();
+
+        // Directly set horizontal velocity immediately
+        if (rb != null)
+            rb.linearVelocity = new Vector2(currentVelocityX, 0f);
+
+        hasBeenInitialized = true;
+    }
+
     private void CheckForDeactivation() {
-        // If the bubble has slowed down enough and is below its max height...
         if (transform.position.y < maxY && rb.linearVelocity.y > 0 && rb.linearVelocity.y < YVelocityDeactivationThreshold) {
-            Debug.Log("Bubble has stabilized, disabling height adjustment.");
-            // Instead of disabling the component, you might want to just stop applying damping
-            // but disabling the whole component works if that's your goal.
             this.enabled = false;
         }
     }
 
-    public void SetupStage(int Stage) {
+    private void SetupStageVisuals() {
         switch (Stage) {
             case 1:
                 transform.localScale = new Vector2(2.1f, 2.1f);
@@ -63,24 +71,28 @@ public class BubbleHeightAdjustment_N : MonoBehaviour // Renamed for clarity
                 maxY = maxYStage2;
                 break;
             case 3:
+                transform.localScale = new Vector2(1f, 1f);
+                maxY = maxYStage3;
+                break;
+            case 4:
                 transform.localScale = new Vector2(0.7f, 0.7f);
                 maxY = maxYStage3;
                 break;
         }
     }
-    public int getStage() {
-        return Stage;
-    }
+
     public void ChangeDirection() {
-        velocityX = -(velocityX);
-        rb.linearVelocityX = velocityX;
+        currentVelocityX = -currentVelocityX;
     }
+
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Floor")) return;
+
         if (collision.gameObject.CompareTag("Player")) {
-            Debug.Log("Life gone");
-            Destroy(gameObject);        
+            Destroy(gameObject);
+            return;
         }
+
         ChangeDirection();
     }
 }
