@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4878459383965226521}
   - component: {fileID: 4726414027669633679}
   - component: {fileID: 7017203709436826739}
-  - component: {fileID: 3181781586751987191}
-  - component: {fileID: 4522835951188698738}
   - component: {fileID: -2272220607635741849}
+  - component: {fileID: 8169820143909198698}
+  - component: {fileID: 5640473460798057813}
   m_Layer: 7
   m_Name: FusionBubble
   m_TagString: FusionBubble
@@ -155,43 +155,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &3181781586751987191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801368911612918048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ffbabb585104e4fa0c45c92de41655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4726414027669633679}
-  initialSpeed: 3
-  yAxisDamping: 0.15
-  Stage: 1
-  maxYStage1: 7
-  maxYStage2: 6.5
-  maxYStage3: 6
-  YVelocityDeactivationThreshold: 0.1
-  combo: 0
---- !u!114 &4522835951188698738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801368911612918048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efa093e5bcaeb24f8361fe51899fd4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bubbleHeight: {fileID: 3181781586751987191}
-  bubblePrefab: {fileID: 801368911612918048}
-  UpwardForce: 3
-  colorIndex: -1
 --- !u!114 &-2272220607635741849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +170,40 @@ MonoBehaviour:
   colorIndex: 0
   UpwardForce: 3
   bubblePrefab: {fileID: 801368911612918048}
+--- !u!114 &8169820143909198698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801368911612918048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164ddbfb2fa779d419be6dc8b092c6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleHeight: {fileID: 5640473460798057813}
+  bubblePrefab: {fileID: 801368911612918048}
+  UpwardForce: 3
+  colorIndex: -1
+--- !u!114 &5640473460798057813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801368911612918048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647b02c159606144b9973816a6fe24e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4726414027669633679}
+  initialSpeed: 3
+  yAxisDamping: 0.15
+  Stage: 1
+  maxYStage1: 7
+  maxYStage2: 6.5
+  maxYStage3: 6
+  YVelocityDeactivationThreshold: 0.1
+  combo: 0

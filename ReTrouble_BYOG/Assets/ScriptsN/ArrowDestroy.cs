@@ -27,6 +27,20 @@ public class ArrowDestroy : MonoBehaviour
                 DestroyArrow();
             }
         }
+        if (collision.CompareTag("FusionBubble")) {
+            if((collision.gameObject.GetComponent<DestroyBubbleFusionN>().colorIndex==3 && (ColorIndex == 0 || ColorIndex == 1))||
+                (collision.gameObject.GetComponent<DestroyBubbleFusionN>().colorIndex == 4 && (ColorIndex == 0 || ColorIndex == 2))||
+                (collision.gameObject.GetComponent<DestroyBubbleFusionN>().colorIndex == 5 && (ColorIndex == 2 || ColorIndex == 1))) {
+                GetComponent<BoxCollider2D>().enabled = false;
+                collision.gameObject.GetComponent<DestroyBubbleFusionN>().DestroyBubble();
+                DestroyArrow();
+            } else {
+                int initialStage = collision.gameObject.GetComponent<HeightAdjustmentFusion_N>().Stage;
+                if (initialStage > 1) collision.gameObject.GetComponent<HeightAdjustmentFusion_N>().Stage = initialStage - 1;
+                collision.gameObject.GetComponent<HeightAdjustmentFusion_N>().SetupStageVisuals();
+                DestroyArrow();
+            }
+        }
         if (collision.CompareTag("Ceiling")) {
             DestroyArrow();
         }

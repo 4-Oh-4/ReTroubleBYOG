@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class HeightAdjustmentFusion_N : MonoBehaviour {
     [Header("Component References")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Collider2D col; // --- ADD THIS LINE --- Reference to the collider
 
     [Header("Movement Settings")]
     [SerializeField] public float initialSpeed = 3f;
@@ -20,15 +22,14 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     private float maxY;
     private float currentVelocityX;
 
-    // ? NEW: A flag to prevent initializing more than once.
+    // We no longer need canMerge. Using the collider state is more reliable.
+    // public bool canMerge = false; 
+
     private bool hasBeenInitialized = false;
 
-    // ? MODIFIED: Start() now handles the VERY FIRST bubble.
     private void Start() {
-        // If Initialize() has not been called externally (i.e., this is the first bubble)
-        // then set it up with default values.
         if (!hasBeenInitialized) {
-            Initialize(Stage, 1); // Default to stage 1, moving right
+            Initialize(Stage, 1);
         }
     }
 
@@ -39,19 +40,37 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         CheckForDeactivation();
     }
 
-    // This method is now used for ALL bubbles (initial and spawned).
     public void Initialize(int newStage, int direction, bool spawnedAfterCollision = false) {
         if (hasBeenInitialized) return;
         if (spawnedAfterCollision) combo = true;
+
         Stage = newStage;
         currentVelocityX = initialSpeed * direction;
         SetupStageVisuals();
 
-        // Directly set horizontal velocity immediately
         if (rb != null)
             rb.linearVelocity = new Vector2(currentVelocityX, 0f);
 
         hasBeenInitialized = true;
+
+        // --- MODIFIED LOGIC HERE ---
+        // If this bubble was spawned from a collision, start the grace period.
+        if (spawnedAfterCollision) {
+            col.isTrigger = false;
+            //StartCoroutine(GracePeriodCoroutine());
+        }
+    }
+
+    // This coroutine creates a 1-second "grace period" where the bubble cannot physically collide with other bubbles.
+    IEnumerator GracePeriodCoroutine() {
+        // 1. Make the collider a trigger so it passes through other bubbles.
+        if (col != null) col.isTrigger = true;
+
+        // 2. Wait for 1 second. (Using WaitForSeconds is generally better for gameplay timers).
+        yield return new WaitForSeconds(1f);
+
+        // 3. Revert the collider back to a normal, solid collider.
+        if (col != null) col.isTrigger = false;
     }
 
     private void CheckForDeactivation() {
