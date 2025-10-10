@@ -19,7 +19,7 @@ public class FusionBubble : MonoBehaviour {
 
         // --- SIMPLIFIED CHECK ---
         // We no longer need to check for canMerge. The trigger handles it.
-        if (index1 == index2) return;
+        if (index1 == index2||index1>2||index2>2) return;
 
         if (gameObject.GetInstanceID() < collision.gameObject.GetInstanceID()) {
             return;
