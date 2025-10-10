@@ -1064,7 +1064,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1983022124}
         m_TargetAssemblyTypeName: SpawnArrow_N, Assembly-CSharp
         m_MethodName: SpawnArrow
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
