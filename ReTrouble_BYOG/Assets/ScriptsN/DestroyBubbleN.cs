@@ -30,9 +30,10 @@ public class DestroyBubbleN : MonoBehaviour {
         // Get upward motion from current bubble
         float parentYVel = bubbleHeight.GetComponent<Rigidbody2D>().linearVelocity.y;
         if (bubbleHeight.combo) {
-            Debug.Log("Combo");
+            GM.GetComponent<ComboManager_N>().IncreaseCombo();
+            //Debug.Log("Combo");
         } else {
-            Debug.Log("Combo Declined");
+            GM.GetComponent<ComboManager_N>().ResetCombo();
         }
         int i = Random.Range(1, 8);
         if (i == 5 && GM.GetComponent<PowerManger_N>().hasPowerUp==false) {
