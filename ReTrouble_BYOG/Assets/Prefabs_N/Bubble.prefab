@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3181781586751987191}
   - component: {fileID: 4522835951188698738}
   - component: {fileID: -8976214226672471121}
+  - component: {fileID: 354100137907211339}
   m_Layer: 6
   m_Name: Bubble
   m_TagString: Bubble
@@ -60,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,3 +211,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4726414027669633679}
   col: {fileID: 7017203709436826739}
+--- !u!114 &354100137907211339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801368911612918048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentShaderType: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
