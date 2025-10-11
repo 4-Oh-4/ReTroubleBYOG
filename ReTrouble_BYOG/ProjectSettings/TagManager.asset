@@ -13,6 +13,7 @@ TagManager:
   - GM
   - FusionBubble
   - Audio
+  - DestructibleObject
   layers:
   - Default
   - TransparentFX
