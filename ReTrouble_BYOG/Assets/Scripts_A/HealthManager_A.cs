@@ -95,6 +95,8 @@ public class HealthManager_A : MonoBehaviour
 
         // And now, make the player invisible.
         gameObject.SetActive(false);
+
+        GameUIManager.Instance.ShowLoseScreen();
     }
 
 }
