@@ -59,11 +59,14 @@ public class PowerManger_N : MonoBehaviour
     {
         // Find all bubbles
         BubbleHeightAdjustment_N[] bubbles = FindObjectsOfType<BubbleHeightAdjustment_N>();
+        HeightAdjustmentFusion_N[] bubblesfusion = FindObjectsOfType<HeightAdjustmentFusion_N>();
         foreach (var bubble in bubbles)
         {
             bubble.Freeze();
         }
-
+        foreach (var bubble in bubblesfusion) {
+            bubble.Freeze();
+        }
         // Handle the UI Timer
         freezeTimerText.gameObject.SetActive(true);
         float timeLeft = freezeDuration;
@@ -78,8 +81,15 @@ public class PowerManger_N : MonoBehaviour
 
         // Unfreeze all bubbles (find them again in case some were destroyed)
         bubbles = FindObjectsOfType<BubbleHeightAdjustment_N>();
+        bubblesfusion = FindObjectsOfType<HeightAdjustmentFusion_N>();
         foreach (var bubble in bubbles)
         {
+            if (bubble != null) // Check if bubble still exists
+            {
+                bubble.Unfreeze();
+            }
+        }
+        foreach (var bubble in bubblesfusion) {
             if (bubble != null) // Check if bubble still exists
             {
                 bubble.Unfreeze();

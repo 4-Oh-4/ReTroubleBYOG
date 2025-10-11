@@ -126,9 +126,18 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Floor")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
+            PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
+            if (player != null && player.isShielded) {
+                player.DisableShield();
+                //Destroy(gameObject);
+                return;
+            }
+
+
             collision.gameObject.GetComponent<HealthManager_A>().DecreaseHealth();
-            Debug.Log("health--");
+
             Destroy(gameObject);
+            Debug.Log("health--");
             return;
         }
         ChangeDirection();
