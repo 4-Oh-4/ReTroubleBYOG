@@ -9,13 +9,16 @@ public class SpawnArrow_N : MonoBehaviour
     [SerializeField]private int index = 0;
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
+    private Animator anim;
 
-    
-    
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+        anim = GetComponent<Animator>(); // Get the Animator component
+
+        gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
 
     }
 
@@ -27,9 +30,9 @@ public class SpawnArrow_N : MonoBehaviour
     public void SpawnArrow(InputAction.CallbackContext context) {
         
         if (canSpawn && context.phase==InputActionPhase.Performed) {
-            
+            anim.SetTrigger("Shoot");
             GameObject arrow=Instantiate(arrowPrefab);
-            arrow.transform.localPosition = transform.localPosition;
+            arrow.transform.localPosition = transform.localPosition-new Vector3(0,0.5f,0);
             arrow.GetComponentInChildren<SpriteRenderer>().color = colorArray[index];
             arrow.GetComponent<ArrowDestroy>().ColorIndex = index;
             arrow.GetComponent<Rigidbody2D>().linearVelocityY = arrowSpeed;

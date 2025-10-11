@@ -15,7 +15,6 @@ public class PlayerController_D : MonoBehaviour {
     public bool isShielded { get; private set; } = false; // Public to read, private to set
 
     private Animator anim;
-    private SpawnArrow_N arrowSpawner; // Reference to SpawnArrow_N
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private float currentVelocityX;
@@ -24,7 +23,6 @@ public class PlayerController_D : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
         anim = GetComponent<Animator>(); // Get the Animator component
-        arrowSpawner = GetComponent<SpawnArrow_N>(); // Get the arrow spawner
     }
 
 
@@ -35,22 +33,7 @@ public class PlayerController_D : MonoBehaviour {
         moveInput = context.ReadValue<Vector2>();
     }
 
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        // We only want to shoot on the button press down
-        if (context.performed)
-        {
-            // Trigger the animation
-            anim.SetTrigger("Shoot");
-
-            // Also call the actual shooting logic from SpawnArrow_N
-            // We pass the context so your existing code still works
-            if (arrowSpawner != null)
-            {
-                arrowSpawner.SpawnArrow(context);
-            }
-        }
-    }
+    
 
     void FixedUpdate() {
         // Only use X axis for horizontal movement
