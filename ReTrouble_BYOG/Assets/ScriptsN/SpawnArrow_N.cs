@@ -10,7 +10,7 @@ public class SpawnArrow_N : MonoBehaviour
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
     private Animator anim;
-
+    [SerializeField] Material[] materials;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +18,7 @@ public class SpawnArrow_N : MonoBehaviour
     {
         anim = GetComponent<Animator>(); // Get the Animator component
 
-        gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+        gameObject.GetComponent<SpriteRenderer>().material = materials[index];
 
     }
 
@@ -42,23 +42,31 @@ public class SpawnArrow_N : MonoBehaviour
     public void ChangeColorPositive(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed && !frenzy) {
             index = (index + 1) % 3;
-            gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+            //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+            gameObject.GetComponent<SpriteRenderer>().material = materials[index];
+
         }
     }
     public void ChangeColorNegative(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed && !frenzy) {
             index = (index - 1+3) % 3;
-            gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+            //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+            gameObject.GetComponent<SpriteRenderer>().material = materials[index];
+
         }
     }
     public void EnableFrenzy() {
         frenzy = true;
         index = 3;
-        gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+        //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+        gameObject.GetComponent<SpriteRenderer>().material = materials[index];
+
     }
     public void DisableFrenzy() {
         frenzy = false;
         index = Random.Range(0,3);
-        gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+        //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
+        gameObject.GetComponent<SpriteRenderer>().material = materials[index];
+
     }
 }
