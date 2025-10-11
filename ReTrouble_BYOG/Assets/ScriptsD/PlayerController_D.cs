@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController_D : MonoBehaviour {
     [Header("Movement Settings")]
     public float moveSpeed = 8f;
@@ -13,18 +14,42 @@ public class PlayerController_D : MonoBehaviour {
     [SerializeField] private GameObject shieldVisual;
     public bool isShielded { get; private set; } = false; // Public to read, private to set
 
+    private Animator anim;
+    private SpawnArrow_N arrowSpawner; // Reference to SpawnArrow_N
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private float currentVelocityX;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
+
+        anim = GetComponent<Animator>(); // Get the Animator component
+        arrowSpawner = GetComponent<SpawnArrow_N>(); // Get the arrow spawner
     }
+
+
 
     // This function name MUST match the action name prefixed with "On" (e.g., OnMove)
     public void OnMove(InputAction.CallbackContext context) {
         // Read the Vector2 from input
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        // We only want to shoot on the button press down
+        if (context.performed)
+        {
+            // Trigger the animation
+            anim.SetTrigger("Shoot");
+
+            // Also call the actual shooting logic from SpawnArrow_N
+            // We pass the context so your existing code still works
+            if (arrowSpawner != null)
+            {
+                arrowSpawner.SpawnArrow(context);
+            }
+        }
     }
 
     void FixedUpdate() {
@@ -35,6 +60,9 @@ public class PlayerController_D : MonoBehaviour {
             : targetX;
 
         rb.linearVelocity = new Vector2(newVX, rb.linearVelocity.y);
+
+        // Set the isMoving boolean in the animator
+        anim.SetBool("isMoving", Mathf.Abs(moveInput.x) > 0.1f);
 
         // Optional: flip sprite based on direction
         if (Mathf.Abs(moveInput.x) > 0.01f) {
