@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7017203709436826739}
   - component: {fileID: 3181781586751987191}
   - component: {fileID: 4522835951188698738}
+  - component: {fileID: -8976214226672471121}
   m_Layer: 6
   m_Name: NonDampingBubble
   m_TagString: Bubble
@@ -174,6 +175,7 @@ MonoBehaviour:
   maxYStage2: 6.5
   maxYStage3: 6
   YVelocityDeactivationThreshold: 0.1
+  combo: 0
 --- !u!114 &4522835951188698738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,4 +190,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleHeight: {fileID: 3181781586751987191}
   bubblePrefab: {fileID: 801368911612918048}
+  UpwardForce: 3
   colorIndex: -1
+--- !u!114 &-8976214226672471121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801368911612918048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c9c0e0ace4db34e8d8b353d7800003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4726414027669633679}
+  col: {fileID: 7017203709436826739}
