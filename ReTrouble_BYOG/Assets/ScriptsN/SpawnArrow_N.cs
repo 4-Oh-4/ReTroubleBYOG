@@ -5,7 +5,7 @@ public class SpawnArrow_N : MonoBehaviour
 {
     [SerializeField] GameObject arrowPrefab;
     public bool canSpawn = true;
-    [SerializeField] float arrowSpeed=4f;
+    [SerializeField] float arrowSpeed=8f;
     [SerializeField]private int index = 0;
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
