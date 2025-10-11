@@ -12,7 +12,7 @@ public class HealthManager_A : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void IncreaseHealth()
