@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4522835951188698738}
   - component: {fileID: -8976214226672471121}
   m_Layer: 6
-  m_Name: NonDampingBubble
+  m_Name: Bubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,6 +191,10 @@ MonoBehaviour:
   bubbleHeight: {fileID: 3181781586751987191}
   bubblePrefab: {fileID: 801368911612918048}
   UpwardForce: 3
+  colorSprites:
+  - {fileID: 300353140021029200, guid: fa8f83ca01c2ff647b4eb86a1902cc7b, type: 3}
+  - {fileID: -5579777447416819038, guid: fa8f83ca01c2ff647b4eb86a1902cc7b, type: 3}
+  - {fileID: -7209212159076336660, guid: fa8f83ca01c2ff647b4eb86a1902cc7b, type: 3}
   colorIndex: -1
 --- !u!114 &-8976214226672471121
 MonoBehaviour:

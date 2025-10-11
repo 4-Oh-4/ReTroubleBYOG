@@ -4,20 +4,23 @@ public class DestroyBubbleFusionN : MonoBehaviour {
     [Header("Component References")]
     [SerializeField] private HeightAdjustmentFusion_N bubbleHeight;
     [SerializeField] private GameObject bubblePrefab;
+    [SerializeField] private Sprite[] colorSprites;
 
     [Header("Settings")]
     [SerializeField] private float UpwardForce = 3f;
     public int colorIndex = -1;
 
     // Color Array: 0:Red, 1:Green, 2:Blue, 3:Yellow, 4:Cyan, 5:Magenta
-    private Color[] colorArray = { Color.red, Color.green, Color.blue, Color.yellow, Color.cyan, Color.magenta };
+    private Color[] colorArray = { Color.red, Color.yellow, Color.blue, new Color(1f, 0.64f, 0f),new Color(0.93f, 0.51f, 0.93f), Color.green };
     private GameObject GM;
 
     private void Start() {
         // If this bubble is being created for the first time, assign a random primary color.
         if (colorIndex == -1) {
             colorIndex = Random.Range(0, 3); // 0, 1, or 2 (Red, Green, or Blue)
-            GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+                                             //GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+            GetComponent<SpriteRenderer>().sprite = colorSprites[colorIndex];
+
         }
         GM = GameObject.FindGameObjectWithTag("GM");
     }
@@ -117,7 +120,9 @@ public class DestroyBubbleFusionN : MonoBehaviour {
         // Ensure the index is within the bounds of the color array
         if (i >= 0 && i < colorArray.Length) {
             colorIndex = i;
-            GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+            //GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+            GetComponent<SpriteRenderer>().sprite = colorSprites[colorIndex];
+
         }
     }
 }

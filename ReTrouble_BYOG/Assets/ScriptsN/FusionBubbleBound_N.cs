@@ -14,8 +14,8 @@ public class FusionBubbleBound_N : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (rb.linearVelocityX > 3) rb.linearVelocityX = 3;
-        if (rb.linearVelocityX < -3) rb.linearVelocityX = -3;
+        if (rb.linearVelocityX >=0) rb.linearVelocityX = 3;
+        if (rb.linearVelocityX < 0) rb.linearVelocityX = -3;
         if (Mathf.Abs(rb.linearVelocityY) > 10) rb.linearVelocityY = 7;
         if (rb.linearVelocity.y >= 0 && rb.linearVelocity.y < 0.1f) {
             if (transform.position.y < 4) {

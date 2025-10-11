@@ -114,7 +114,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
 
             collision.gameObject.GetComponent<HealthManager_A>().DecreaseHealth();
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("health--");
             return;
         }
