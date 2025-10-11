@@ -30,6 +30,7 @@ public class HealthManager_A : MonoBehaviour
         Debug.Log("Health decreased , currentHealth = " + currentHealth);
         if (currentHealth <= 0)
         {
+            Time.timeScale = 0f;
             Debug.Log("Game Over");
         }
     }

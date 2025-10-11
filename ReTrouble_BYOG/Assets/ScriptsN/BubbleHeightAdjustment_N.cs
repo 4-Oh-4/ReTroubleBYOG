@@ -110,8 +110,9 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
                 //Destroy(gameObject);
                 return;
             }
+            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
 
-
+            ChangeDirection();
             collision.gameObject.GetComponent<HealthManager_A>().DecreaseHealth();
 
             //Destroy(gameObject);
