@@ -62,7 +62,7 @@ public class PlayerController_D : MonoBehaviour {
         rb.linearVelocity = new Vector2(newVX, rb.linearVelocity.y);
 
         // Set the isMoving boolean in the animator
-        anim.SetBool("isMoving", Mathf.Abs(moveInput.x) > 0.1f);
+        anim.SetBool("IsMoving", Mathf.Abs(moveInput.x) > 0.1f);
 
         // Optional: flip sprite based on direction
         if (Mathf.Abs(moveInput.x) > 0.01f) {
