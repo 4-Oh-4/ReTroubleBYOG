@@ -31,9 +31,12 @@ public class ComboManager_N : MonoBehaviour
 
     public void ResetCombo() {
         score += combo;
-        combo = 0;
+        combo = 1;
         Debug.Log(" Reset score" + score.ToString());
-
+        if (score >= frenzyCondition && !isFrenzyActive) {
+            // Instead of just enabling, we now start the timer coroutine
+            StartCoroutine(FrenzyCoroutine());
+        }
     }
     public void IncreaseCombo() {
         combo ++;
