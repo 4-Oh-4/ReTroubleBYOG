@@ -8,7 +8,7 @@ public class HealthManager_A : MonoBehaviour
 {
     [SerializeField] public int maxHealth = 3;
     public int currentHealth { get; private set; }
-
+    [SerializeField] HealthBar bar;
 
     private Animator anim;
     private PlayerController_D playerController;
@@ -47,7 +47,8 @@ public class HealthManager_A : MonoBehaviour
 
         // If already dead, don't do anything
         if (isDead) return;
-
+        if (bar != null) bar.descreaseHealth();
+        else Debug.Log(("attach healthbar"));
         currentHealth -= 1;
         Debug.Log("Health decreased , currentHealth = " + currentHealth);
         // Optional: Update UI here

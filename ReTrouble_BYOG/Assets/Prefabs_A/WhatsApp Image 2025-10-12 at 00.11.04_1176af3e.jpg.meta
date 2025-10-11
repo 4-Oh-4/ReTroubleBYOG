@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bfc4e19cc4a4b7c45a6b9de5e029c126
+guid: 723f36112a903fd48a998aeb2a1928f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4422588465013671760
-    second: HealthHeart_0
+      213: 7424944404059873454
+    second: WhatsApp Image 2025-10-12 at 00.11.04_1176af3e_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,37 +109,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthHeart_0
+      name: WhatsApp Image 2025-10-12 at 00.11.04_1176af3e_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b8be13193fcf92c0800000000000000
-      internalID: -4422588465013671760
+      spriteID: ea06301b893ba0760800000000000000
+      internalID: 7424944404059873454
       vertices: []
       indices: 
       edges: []
@@ -173,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      HealthHeart_0: -4422588465013671760
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

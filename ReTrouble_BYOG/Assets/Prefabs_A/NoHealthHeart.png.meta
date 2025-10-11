@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7443deb135925b4b912683a5cd02315
+guid: bab28f1324728a14ebbf4df80739a586
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -109,6 +109,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD:ReTrouble_BYOG/Assets/Prefabs_A/NoHealthHeart.png.meta
+=======
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -135,6 +137,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+>>>>>>> main:ReTrouble_BYOG/Assets/Prefabs_A/NoHealthHeart.jpg.meta
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -142,10 +145,10 @@ TextureImporter:
       name: NoHealthHeart_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 232
+        y: 166
+        width: 564
+        height: 664
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
