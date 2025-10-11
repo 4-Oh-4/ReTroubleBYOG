@@ -31,6 +31,7 @@ public class DestroyBubbleFusionN : MonoBehaviour {
         // If the bubble is too small, just destroy it.
         if (currentStage >= 4) {
             Destroy(gameObject);
+            Debug.Log("FusionBallSmall Destroy: Puff");
             return;
         }
 

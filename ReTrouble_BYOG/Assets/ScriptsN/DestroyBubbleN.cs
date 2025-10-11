@@ -23,6 +23,8 @@ public class DestroyBubbleN : MonoBehaviour {
         int currentStage = bubbleHeight.Stage;
 
         if (currentStage >= 4) {
+            Debug.Log("BallSmall Destroy: Puff");
+
             Destroy(gameObject);
             return;
         }

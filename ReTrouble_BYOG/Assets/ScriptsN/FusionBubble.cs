@@ -79,7 +79,7 @@ public class FusionBubble : MonoBehaviour {
         }
 
         Debug.Log("Fusion initiated by: " + gameObject.name);
-
+        
         int newColorIndex = index1 + index2 + 2;
         float parentYVel = GetComponent<Rigidbody2D>().linearVelocity.y;
         int currentStage = GetComponent<HeightAdjustmentFusion_N>().Stage;
