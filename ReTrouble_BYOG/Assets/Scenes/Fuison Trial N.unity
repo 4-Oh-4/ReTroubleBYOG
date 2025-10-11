@@ -499,6 +499,8 @@ MonoBehaviour:
   shieldPowerupPrefab: {fileID: 8712976444381605628, guid: 5888ae91c517bc14f8609e4b00f11eee, type: 3}
   freezeDuration: 5
   freezeTimerText: {fileID: 1307968503}
+  freezeBool: 0
+  ShieldBool: 0
 --- !u!114 &355963595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +519,7 @@ MonoBehaviour:
   frenzyCondition: 3
   frenzyDuration: 10
   frenzyTimerText: {fileID: 0}
+  canFrenzy: 1
 --- !u!1 &485990243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,6 +2076,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 84335948997586726, guid: 3b72ce00aa4c620418035bce0475e4d5, type: 3}
   canSpawn: 1
   arrowSpeed: 6
+  index: 0
   frenzy: 0
 --- !u!114 &1983022125
 MonoBehaviour:
