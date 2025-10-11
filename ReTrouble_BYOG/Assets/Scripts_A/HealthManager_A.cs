@@ -1,9 +1,10 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class HealthManager_A : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 3;
-    private int currentHealth;
+    public int currentHealth { get; private set; }
 
     void Start()
     {
