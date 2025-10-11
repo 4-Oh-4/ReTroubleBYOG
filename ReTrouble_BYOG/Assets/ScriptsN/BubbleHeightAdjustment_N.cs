@@ -127,7 +127,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         savedAngularVelocity = rb.angularVelocity;
         rb.bodyType = RigidbodyType2D.Static; // This completely stops all physics movement
                                               // Optional: Change color to show it's frozen
-        GetComponent<SpriteRenderer>().color = Color.blue;
+        //GetComponent<SpriteRenderer>().color = Color.blue;
     }
 
     public void Unfreeze()
@@ -138,6 +138,6 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         rb.linearVelocity = savedVelocity;
         rb.angularVelocity = savedAngularVelocity;
         // Restore original color - relies on DestroyBubbleN to have the color
-        GetComponent<DestroyBubbleN>().SetColor(GetComponent<DestroyBubbleN>().colorIndex);
+       // GetComponent<DestroyBubbleN>().SetColor(GetComponent<DestroyBubbleN>().colorIndex);
     }
 }
