@@ -123,7 +123,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     }
     private void OnCollisionEnter2D(Collision2D collision) {
         combo = false;
-        if (collision.gameObject.CompareTag("Floor")) return;
+        if (collision.gameObject.CompareTag("Floor")||collision.gameObject.CompareTag("DestructibleObject")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
             PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
