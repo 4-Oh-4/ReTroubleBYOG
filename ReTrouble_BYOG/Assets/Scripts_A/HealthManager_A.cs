@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class HealthManager_A : MonoBehaviour
 {
     [SerializeField] public int maxHealth = 3;
@@ -11,6 +12,7 @@ public class HealthManager_A : MonoBehaviour
 
     private Animator anim;
     private PlayerController_D playerController;
+    private Rigidbody2D rb;
     private bool isDead = false; // Prevents taking damage after death
 
 
@@ -18,6 +20,7 @@ public class HealthManager_A : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController_D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
@@ -61,6 +64,12 @@ public class HealthManager_A : MonoBehaviour
     {
         isDead = true;
 
+        // --- NEW: STOP ALL MOVEMENT IMMEDIATELY ---
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.simulated = false;
+
         // 1. Trigger the death animation
         anim.SetTrigger("Die");
 
@@ -73,20 +82,18 @@ public class HealthManager_A : MonoBehaviour
         // 3. Disable the player's collider so bubbles pass through
         GetComponent<Collider2D>().enabled = false;
 
-        // 4. Start a coroutine to wait for the animation before showing "Game Over"
-        StartCoroutine(GameOverSequence());
+        
     }
 
 
-    private IEnumerator GameOverSequence()
+    public void OnDeathAnimationComplete()
     {
-        // Wait for 2 seconds (or the length of your death animation)
-        yield return new WaitForSeconds(2f);
 
-        // Now, show the Game Over screen or freeze the game
         Time.timeScale = 0f;
         Debug.Log("Game Over");
-        // Here you would typically show a UI panel, e.g., gameOverPanel.SetActive(true);
+
+        // And now, make the player invisible.
+        gameObject.SetActive(false);
     }
 
 }
