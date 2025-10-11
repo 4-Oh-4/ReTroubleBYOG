@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4522835951188698738}
   - component: {fileID: -8976214226672471121}
   m_Layer: 6
-  m_Name: NonDampingBubble
+  m_Name: Bubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
