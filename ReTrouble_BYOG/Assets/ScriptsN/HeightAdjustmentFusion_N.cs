@@ -22,6 +22,9 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     private float maxY;
     private float currentVelocityX;
 
+    private Vector2 savedVelocity;
+    private float savedAngularVelocity;
+    private bool isFrozen = false;
     // We no longer need canMerge. Using the collider state is more reliable.
     // public bool canMerge = false; 
 
@@ -129,5 +132,25 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
             return;
         }
         ChangeDirection();
+    }
+    // --- Powerup Methods ---
+    public void Freeze() {
+        if (rb == null) return;
+        isFrozen = true;
+        savedVelocity = rb.linearVelocity;
+        savedAngularVelocity = rb.angularVelocity;
+        rb.bodyType = RigidbodyType2D.Static; // This completely stops all physics movement
+                                              // Optional: Change color to show it's frozen
+                                              //GetComponent<SpriteRenderer>().color = Color.blue;
+    }
+
+    public void Unfreeze() {
+        if (rb == null) return;
+        isFrozen = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.linearVelocity = savedVelocity;
+        rb.angularVelocity = savedAngularVelocity;
+        // Restore original color - relies on DestroyBubbleN to have the color
+        // GetComponent<DestroyBubbleN>().SetColor(GetComponent<DestroyBubbleN>().colorIndex);
     }
 }

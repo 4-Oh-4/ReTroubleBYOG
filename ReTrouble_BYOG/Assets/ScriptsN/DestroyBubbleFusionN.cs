@@ -76,7 +76,8 @@ public class DestroyBubbleFusionN : MonoBehaviour {
             GM.GetComponent<ComboManager_N>().ResetCombo();
         }
         int i = Random.Range(1, 8);
-        if (i == 5 && GM.GetComponent<PowerManger_N>().hasPowerUp == false) {
+        if (i == 1 && PowerManger_N.Instance != null) {
+            PowerManger_N.Instance.SpawnRandomPowerup(transform.position);
             Debug.Log("PowerUP drop");
         }
         if (newColorIndex1 != newColorIndex2) nextStage--;
