@@ -9,6 +9,8 @@ public class SpawnArrow_N : MonoBehaviour
     private int index = 0;
     private Color[] colorArray = { Color.red ,Color.green, Color.blue,Color.white};
     public bool frenzy = false;
+
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

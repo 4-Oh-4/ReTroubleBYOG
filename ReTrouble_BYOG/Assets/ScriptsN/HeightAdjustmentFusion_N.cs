@@ -123,8 +123,9 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Floor")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<HealthManager_A>().DecreaseHealth();
             Debug.Log("health--");
+            Destroy(gameObject);
             return;
         }
         ChangeDirection();

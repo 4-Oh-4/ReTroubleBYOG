@@ -101,6 +101,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Floor")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
+
             //New Sheild Check
             PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
             if (player != null && player.isShielded)
@@ -110,6 +111,8 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
                 return;
             }
 
+
+            collision.gameObject.GetComponent<HealthManager_A>().DecreaseHealth();
 
             Destroy(gameObject);
             Debug.Log("health--");

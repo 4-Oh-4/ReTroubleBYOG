@@ -12,6 +12,7 @@ TagManager:
   - Ceiling
   - GM
   - FusionBubble
+  - Audio
   layers:
   - Default
   - TransparentFX
