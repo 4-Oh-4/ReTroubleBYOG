@@ -15,7 +15,7 @@ public class ComboManager_N : MonoBehaviour
     [SerializeField] private int frenzyCondition = 5;
     [SerializeField] private float frenzyDuration = 10f; // NEW: How long frenzy lasts
     [SerializeField] private TextMeshProUGUI frenzyTimerText; // NEW: UI text for the timer
-    
+    [SerializeField] bool canFrenzy = true;
     private bool isFrenzyActive = false;
 
 
@@ -35,7 +35,8 @@ public class ComboManager_N : MonoBehaviour
         Debug.Log(" Reset score" + score.ToString());
         if (score >= frenzyCondition && !isFrenzyActive) {
             // Instead of just enabling, we now start the timer coroutine
-            StartCoroutine(FrenzyCoroutine());
+            if (canFrenzy) StartCoroutine(FrenzyCoroutine());
+            else return;
         }
     }
     public void IncreaseCombo() {
@@ -44,8 +45,8 @@ public class ComboManager_N : MonoBehaviour
         Debug.Log("I score" + score.ToString());
         if (score >= frenzyCondition && !isFrenzyActive)
         {
-            // Instead of just enabling, we now start the timer coroutine
-            StartCoroutine(FrenzyCoroutine());
+            if (canFrenzy) StartCoroutine(FrenzyCoroutine());
+            else return;
         }
     }
 
