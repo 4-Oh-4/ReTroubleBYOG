@@ -5,18 +5,27 @@ public class SpawnArrow_N : MonoBehaviour
 {
     [SerializeField] GameObject arrowPrefab;
     public bool canSpawn = true;
-    [SerializeField] float arrowSpeed=4f;
+    [SerializeField] float arrowSpeed=8f;
     [SerializeField]private int index = 0;
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
+
+    // --- Reference to other components ---
     private Animator anim;
+
     [SerializeField] Material[] materials;
 
 
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController_D>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        anim = GetComponent<Animator>(); // Get the Animator component
+        
 
         gameObject.GetComponent<SpriteRenderer>().material = materials[index];
 
@@ -30,13 +39,26 @@ public class SpawnArrow_N : MonoBehaviour
     public void SpawnArrow(InputAction.CallbackContext context) {
         
         if (canSpawn && context.phase==InputActionPhase.Performed) {
+
+            playerController.LockMovement();
             anim.SetTrigger("Shoot");
-            GameObject arrow=Instantiate(arrowPrefab);
-            arrow.transform.localPosition = transform.localPosition-new Vector3(0,0.5f,0);
+
+        }
+    }
+
+    // NEW: This public function will be called by an Animation Event
+    public void FireArrowFromAnimation()
+    {
+        if (canSpawn)
+        {
+            canSpawn = false;
+
+            GameObject arrow = Instantiate(arrowPrefab);
+            arrow.transform.position = transform.position; // Adjusted spawn point
+
             arrow.GetComponentInChildren<SpriteRenderer>().color = colorArray[index];
             arrow.GetComponent<ArrowDestroy>().ColorIndex = index;
-            arrow.GetComponent<Rigidbody2D>().linearVelocityY = arrowSpeed;
-            canSpawn = false;
+            arrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, arrowSpeed);
         }
     }
     public void ChangeColorPositive(InputAction.CallbackContext context) {
