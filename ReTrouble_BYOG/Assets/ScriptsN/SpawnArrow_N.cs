@@ -9,7 +9,7 @@ public class SpawnArrow_N : MonoBehaviour
     [SerializeField]private int index = 0;
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
-
+    [SerializeField] PlayerController_D playerController;
     // --- Reference to other components ---
     private Animator anim;
 
