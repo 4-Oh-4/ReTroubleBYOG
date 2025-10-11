@@ -1,4 +1,5 @@
 // PlayerMovement_Events.cs
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,10 +15,14 @@ public class PlayerController_D : MonoBehaviour {
     [SerializeField] private GameObject shieldVisual;
     public bool isShielded { get; private set; } = false; // Public to read, private to set
 
+    // --- Component References & State ---
+
     private Animator anim;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private float currentVelocityX;
+
+    private bool isMovementLocked = false; // Prevent Movement Control of the player
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +41,13 @@ public class PlayerController_D : MonoBehaviour {
     
 
     void FixedUpdate() {
+
+        //NEW: If movement is locked , stop all logic here 
+        if (isMovementLocked)
+        {
+            return;
+        }
+
         // Only use X axis for horizontal movement
         float targetX = moveInput.x * moveSpeed;
         float newVX = useSmoothing
@@ -55,6 +67,19 @@ public class PlayerController_D : MonoBehaviour {
         }
     }
 
+    //NEW Public Methods to Control Movement Lock
+    public void LockMovement()
+    {
+        isMovementLocked = true;
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Instantly stop horizontal momentum
+        anim.SetBool("IsMoving", false); // Stop the run animation
+    }
+
+
+    public void UnlockMovement()
+    {
+        isMovementLocked = false;
+    }
 
     public void EnableShield()
     {

@@ -75,17 +75,17 @@ AnimationClip:
     - time: 0.3
       value: {fileID: 21300000, guid: 31424816086c89e439398b59574433fc, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: b3bab068528044d4abd9e52e880802f7, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 6de407448a0da9d46853b7cdc2419d60, type: 3}
-    - time: 0.33333334
       value: {fileID: 21300000, guid: de48419a9d7a0014ba962447c1202f7d, type: 3}
     - time: 0.33333334
       value: {fileID: 21300000, guid: bd3e01b35dc461141aba5c6b8ab6d9be, type: 3}
-    - time: 0.38333333
-      value: {fileID: 21300000, guid: caf569af9d90ecd40bb71a3b5cdbf7c3, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: b3bab068528044d4abd9e52e880802f7, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 6de407448a0da9d46853b7cdc2419d60, type: 3}
     - time: 0.38333333
       value: {fileID: 21300000, guid: fe4476045a44c64489396e7a6cad8e4f, type: 3}
+    - time: 0.38333333
+      value: {fileID: 21300000, guid: caf569af9d90ecd40bb71a3b5cdbf7c3, type: 3}
     - time: 0.4
       value: {fileID: 21300000, guid: 30ad436b3a7009f4ebd2d1041c45fbec, type: 3}
     - time: 0.4
@@ -93,17 +93,15 @@ AnimationClip:
     - time: 0.4
       value: {fileID: 21300000, guid: fd33fb71995cd344482afef668353d36, type: 3}
     - time: 0.43333334
+      value: {fileID: 21300000, guid: f449f4ffc83a8f3419f1820ac514bd5e, type: 3}
+    - time: 0.43333334
       value: {fileID: 21300000, guid: 45e76619e21f3ff48bf89ac90cd1df04, type: 3}
     - time: 0.43333334
       value: {fileID: 21300000, guid: 30a75f218b2a42c49ba619e211bd337d, type: 3}
     - time: 0.43333334
       value: {fileID: 21300000, guid: 49f682120d8e5c743a15c71acc5c68d9, type: 3}
-    - time: 0.43333334
-      value: {fileID: 21300000, guid: f449f4ffc83a8f3419f1820ac514bd5e, type: 3}
     - time: 0.46666667
       value: {fileID: 21300000, guid: bef5ba80b9064ec46a254d4e0bc95bad, type: 3}
-    - time: 0.48333332
-      value: {fileID: 21300000, guid: 48844324c58bbe946bd12b977d3cc6cc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -153,27 +151,26 @@ AnimationClip:
     - {fileID: 21300000, guid: 0a0087bc3377bf2498b6892707b2a372, type: 3}
     - {fileID: 21300000, guid: 02f6005ae2090e4458e68a1086f746ea, type: 3}
     - {fileID: 21300000, guid: 31424816086c89e439398b59574433fc, type: 3}
-    - {fileID: 21300000, guid: b3bab068528044d4abd9e52e880802f7, type: 3}
-    - {fileID: 21300000, guid: 6de407448a0da9d46853b7cdc2419d60, type: 3}
     - {fileID: 21300000, guid: de48419a9d7a0014ba962447c1202f7d, type: 3}
     - {fileID: 21300000, guid: bd3e01b35dc461141aba5c6b8ab6d9be, type: 3}
-    - {fileID: 21300000, guid: caf569af9d90ecd40bb71a3b5cdbf7c3, type: 3}
+    - {fileID: 21300000, guid: b3bab068528044d4abd9e52e880802f7, type: 3}
+    - {fileID: 21300000, guid: 6de407448a0da9d46853b7cdc2419d60, type: 3}
     - {fileID: 21300000, guid: fe4476045a44c64489396e7a6cad8e4f, type: 3}
+    - {fileID: 21300000, guid: caf569af9d90ecd40bb71a3b5cdbf7c3, type: 3}
     - {fileID: 21300000, guid: 30ad436b3a7009f4ebd2d1041c45fbec, type: 3}
     - {fileID: 21300000, guid: 3dab84bef54df1e42b1129823c0bb726, type: 3}
     - {fileID: 21300000, guid: fd33fb71995cd344482afef668353d36, type: 3}
+    - {fileID: 21300000, guid: f449f4ffc83a8f3419f1820ac514bd5e, type: 3}
     - {fileID: 21300000, guid: 45e76619e21f3ff48bf89ac90cd1df04, type: 3}
     - {fileID: 21300000, guid: 30a75f218b2a42c49ba619e211bd337d, type: 3}
     - {fileID: 21300000, guid: 49f682120d8e5c743a15c71acc5c68d9, type: 3}
-    - {fileID: 21300000, guid: f449f4ffc83a8f3419f1820ac514bd5e, type: 3}
     - {fileID: 21300000, guid: bef5ba80b9064ec46a254d4e0bc95bad, type: 3}
-    - {fileID: 21300000, guid: 48844324c58bbe946bd12b977d3cc6cc, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.48333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -192,4 +189,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.18333334
+    functionName: FireArrowFromAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.46666667
+    functionName: UnlockMovement
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
