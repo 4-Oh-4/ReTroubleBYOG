@@ -68,6 +68,7 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         // If this bubble was spawned from a collision, start the grace period.
         if (spawnedAfterCollision) {
             //col.isTrigger = false;
+            Debug.Log("FusionAnimHere");
             StartCoroutine(GracePeriodCoroutine());
         }
     }
