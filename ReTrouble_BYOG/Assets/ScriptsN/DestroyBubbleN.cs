@@ -5,13 +5,16 @@ public class DestroyBubbleN : MonoBehaviour {
     [SerializeField] private BubbleHeightAdjustment_N bubbleHeight;
     [SerializeField] private GameObject bubblePrefab; // Renamed for clarity
     [SerializeField] private float UpwardForce = 3f;
+    [SerializeField] private Sprite[] colorSprites;
     public int colorIndex = -1;
-    private Color[] colorArray = { Color.red, Color.green, Color.blue };
+    private Color[] colorArray = { Color.red, Color.yellow, Color.blue };
     GameObject GM;
     private void Start() {
         if (colorIndex == -1) {
             colorIndex = Random.Range(0, 3);
-            GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+            //GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+            GetComponent<SpriteRenderer>().sprite = colorSprites[colorIndex];
+
         }
         GM = GameObject.FindGameObjectWithTag("GM");
     }
@@ -92,7 +95,8 @@ public class DestroyBubbleN : MonoBehaviour {
 
     public void SetColor(int i) {
         colorIndex = i;
-        GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+        //GetComponent<SpriteRenderer>().color = colorArray[colorIndex];
+        GetComponent<SpriteRenderer>().sprite = colorSprites[colorIndex];
     }
 
 }
