@@ -34,6 +34,9 @@ public class InstructionLevel0 : MonoBehaviour
     }
     public void movementDone() {
         movementImg.SetActive(true);
+        if (movementImg.activeInHierarchy && shootDone.activeInHierarchy) {
+            StartCoroutine(SpawnFreeze(FreezePowerUp));
+        }
     }
     public void ShootDone() {
         if (!once) return;
@@ -54,7 +57,7 @@ public class InstructionLevel0 : MonoBehaviour
     IEnumerator SpawnFreeze(GameObject obj,bool shield=false) {
         if (!shield) yield return new WaitForSecondsRealtime(3f);
         else yield return new WaitForSecondsRealtime(6f);
-        obj.SetActive(true);
+        if(obj!=null)obj.SetActive(true);
     }
     IEnumerator DeactivateCage() {
         yield return new WaitForSecondsRealtime(1.5f);

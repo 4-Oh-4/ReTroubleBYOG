@@ -132,10 +132,11 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
                 //Destroy(gameObject);
                 return;
             }
+            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
 
 
             collision.gameObject.GetComponent<HealthManager_A>().DecreaseHealth();
-
+            ChangeDirection();
             //Destroy(gameObject);
             Debug.Log("health--");
             return;

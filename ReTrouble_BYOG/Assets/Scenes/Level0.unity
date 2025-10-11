@@ -1587,6 +1587,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6488034533523107443, guid: 5888ae91c517bc14f8609e4b00f11eee, type: 3}
+      propertyPath: hoverLifetime
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 8712976444381605628, guid: 5888ae91c517bc14f8609e4b00f11eee, type: 3}
       propertyPath: m_Name
       value: SheildPowerUp
@@ -1665,6 +1669,10 @@ PrefabInstance:
     - target: {fileID: 3002436797392706376, guid: f15d5ce1bf499304fb5b2c9835a8a639, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817111114328815495, guid: f15d5ce1bf499304fb5b2c9835a8a639, type: 3}
+      propertyPath: hoverLifetime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
