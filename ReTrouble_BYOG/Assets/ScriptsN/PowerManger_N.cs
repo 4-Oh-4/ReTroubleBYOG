@@ -15,7 +15,8 @@ public class PowerManger_N : MonoBehaviour
     [Header("Freeze Settings")]
     [SerializeField] private float freezeDuration = 5.0f;
     [SerializeField] private TextMeshProUGUI freezeTimerText;
-
+    public bool freezeBool = false;
+    public bool ShieldBool = false;
     // Singleton pattern for easy access
     public static PowerManger_N Instance;
 
@@ -57,6 +58,7 @@ public class PowerManger_N : MonoBehaviour
     // --- Freeze Logic ---
     private IEnumerator FreezeCoroutine()
     {
+        freezeBool = true;
         // Find all bubbles
         BubbleHeightAdjustment_N[] bubbles = FindObjectsOfType<BubbleHeightAdjustment_N>();
         HeightAdjustmentFusion_N[] bubblesfusion = FindObjectsOfType<HeightAdjustmentFusion_N>();
@@ -100,6 +102,7 @@ public class PowerManger_N : MonoBehaviour
     // --- Shield Logic ---
     private void ActivateShield()
     {
+        ShieldBool = true;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
