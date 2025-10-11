@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 398ee1269183eb54cbe12ce18279e2e6
+guid: 8291ea04c8d97a340b253266acfe06b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8155485732455793416
-    second: harpoon_red_0
+      213: 8573180455451914134
+    second: harpoon_white_0
   - first:
-      213: -8805567786788528918
-    second: harpoon_red_1
+      213: -315189661621199499
+    second: harpoon_white_1
   - first:
-      213: 8391598156918354210
-    second: harpoon_red_2
+      213: -514146259470094812
+    second: harpoon_white_2
   - first:
-      213: 3841681742887421979
-    second: harpoon_red_3
+      213: -6788717070449189229
+    second: harpoon_white_3
   - first:
-      213: 8711020663812616244
-    second: harpoon_red_4
+      213: 5313513648142427369
+    second: harpoon_white_4
   - first:
-      213: 7279182133358058825
-    second: harpoon_red_5
+      213: 2401863869269231566
+    second: harpoon_white_5
   - first:
-      213: -3332068889456923331
-    second: harpoon_red_6
+      213: -8347407357203027388
+    second: harpoon_white_6
   - first:
-      213: -6824365396109377507
-    second: harpoon_red_7
+      213: 370610317474017152
+    second: harpoon_white_7
   - first:
-      213: -7332603023370377447
-    second: harpoon_red_8
+      213: -5986949344952657394
+    second: harpoon_white_8
   - first:
-      213: -7187298494303147237
-    second: harpoon_red_9
+      213: 405961924696709065
+    second: harpoon_white_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -79,7 +79,7 @@ TextureImporter:
   alignment: 9
   spritePivot: {x: 0.3811589, y: 0.50211644}
   spritePixelsToUnits: 1000
-  spriteBorder: {x: 279, y: 0, z: 507, w: 0}
+  spriteBorder: {x: 279, y: 0, z: 528, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: harpoon_red_0
+      name: harpoon_white_0
       rect:
         serializedVersion: 2
         x: 58
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8034bc5601b1e2170800000000000000
-      internalID: 8155485732455793416
+      spriteID: 69f688a933e0af670800000000000000
+      internalID: 8573180455451914134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_1
+      name: harpoon_white_1
       rect:
         serializedVersion: 2
         x: 531
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aecd8d670c65cc580800000000000000
-      internalID: -8805567786788528918
+      spriteID: 57d51363ca830abf0800000000000000
+      internalID: -315189661621199499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_2
+      name: harpoon_white_2
       rect:
         serializedVersion: 2
         x: 617
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 221f0f82012f47470800000000000000
-      internalID: 8391598156918354210
+      spriteID: 42e60b973b26dd8f0800000000000000
+      internalID: -514146259470094812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_3
+      name: harpoon_white_3
       rect:
         serializedVersion: 2
         x: 527
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1888e8e035605530800000000000000
-      internalID: 3841681742887421979
+      spriteID: 39ede37eac1a9c1a0800000000000000
+      internalID: -6788717070449189229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_4
+      name: harpoon_white_4
       rect:
         serializedVersion: 2
         x: 548
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43073a90423c3e870800000000000000
-      internalID: 8711020663812616244
+      spriteID: 9e428b2c2846db940800000000000000
+      internalID: 5313513648142427369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_5
+      name: harpoon_white_5
       rect:
         serializedVersion: 2
         x: 74
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94d5d226599d40560800000000000000
-      internalID: 7279182133358058825
+      spriteID: ec743a6a672255120800000000000000
+      internalID: 2401863869269231566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_6
+      name: harpoon_white_6
       rect:
         serializedVersion: 2
         x: 73
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3d2ac4cffc12c1d0800000000000000
-      internalID: -3332068889456923331
+      spriteID: 44a6e6e2c3d082c80800000000000000
+      internalID: -8347407357203027388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_7
+      name: harpoon_white_7
       rect:
         serializedVersion: 2
         x: 651
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d10ce6b44dbfa41a0800000000000000
-      internalID: -6824365396109377507
+      spriteID: 08f2223ce1ca42500800000000000000
+      internalID: 370610317474017152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_8
+      name: harpoon_white_8
       rect:
         serializedVersion: 2
         x: 71
@@ -331,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 917ad09666c5d3a90800000000000000
-      internalID: -7332603023370377447
+      spriteID: e0ad6dd7a451aeca0800000000000000
+      internalID: -5986949344952657394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: harpoon_red_9
+      name: harpoon_white_9
       rect:
         serializedVersion: 2
         x: 616
@@ -353,8 +353,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1b6c507916914c90800000000000000
-      internalID: -7187298494303147237
+      spriteID: 9c791e9383442a500800000000000000
+      internalID: 405961924696709065
       vertices: []
       indices: 
       edges: []
@@ -373,16 +373,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      harpoon_red_0: 8155485732455793416
-      harpoon_red_1: -8805567786788528918
-      harpoon_red_2: 8391598156918354210
-      harpoon_red_3: 3841681742887421979
-      harpoon_red_4: 8711020663812616244
-      harpoon_red_5: 7279182133358058825
-      harpoon_red_6: -3332068889456923331
-      harpoon_red_7: -6824365396109377507
-      harpoon_red_8: -7332603023370377447
-      harpoon_red_9: -7187298494303147237
+      harpoon_white_0: 8573180455451914134
+      harpoon_white_1: -315189661621199499
+      harpoon_white_2: -514146259470094812
+      harpoon_white_3: -6788717070449189229
+      harpoon_white_4: 5313513648142427369
+      harpoon_white_5: 2401863869269231566
+      harpoon_white_6: -8347407357203027388
+      harpoon_white_7: 370610317474017152
+      harpoon_white_8: -5986949344952657394
+      harpoon_white_9: 405961924696709065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,7 +14,7 @@ public class SpawnArrow_N : MonoBehaviour
     private Animator anim;
 
     [SerializeField] Material[] materials;
-
+    [SerializeField] Sprite[] arrowsprites;
 
 
     private void Awake()
@@ -55,8 +55,8 @@ public class SpawnArrow_N : MonoBehaviour
 
             GameObject arrow = Instantiate(arrowPrefab);
             arrow.transform.position = transform.position; // Adjusted spawn point
-
-            arrow.GetComponentInChildren<SpriteRenderer>().color = colorArray[index];
+            arrow.transform.localScale = new Vector3(1, 1, 1);
+            arrow.GetComponentInChildren<SpriteRenderer>().sprite = arrowsprites[index];
             arrow.GetComponent<ArrowDestroy>().ColorIndex = index;
             arrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, arrowSpeed);
         }

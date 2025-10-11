@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,7 +13,9 @@ public class HealthManager_A : MonoBehaviour
 
     private Animator anim;
     private PlayerController_D playerController;
+    private SpawnArrow_N spawnArrow;
     private Rigidbody2D rb;
+    [SerializeField]private PlayerInput playerInput;
     private bool isDead = false; // Prevents taking damage after death
 
 
@@ -20,6 +23,7 @@ public class HealthManager_A : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController_D>();
+        spawnArrow = GetComponent<SpawnArrow_N>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Start()
@@ -56,6 +60,9 @@ public class HealthManager_A : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (playerInput != null) {
+                playerInput.enabled = false;
+            }
             Die();
         }
     }
@@ -73,7 +80,7 @@ public class HealthManager_A : MonoBehaviour
 
         // 1. Trigger the death animation
         anim.SetTrigger("Die");
-
+        
         // 2. Disable player controls
         if (playerController != null)
         {
@@ -94,7 +101,7 @@ public class HealthManager_A : MonoBehaviour
         Debug.Log("Game Over");
 
         // And now, make the player invisible.
-        gameObject.SetActive(false);
+        Destroy(gameObject);
 
         GameUIManager.Instance.ShowLoseScreen();
     }

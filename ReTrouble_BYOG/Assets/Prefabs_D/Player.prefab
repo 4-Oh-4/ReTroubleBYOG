@@ -295,11 +295,17 @@ MonoBehaviour:
   arrowSpeed: 10
   index: 0
   frenzy: 0
+  playerController: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 5917a5649390cc34fa389e6e11cadefe, type: 2}
   - {fileID: 2100000, guid: 507ebfb8d833e534a93dab5de27bbf15, type: 2}
   - {fileID: 2100000, guid: e6704e49543fa1e4dbc11eb59d17e579, type: 2}
   - {fileID: 2100000, guid: ebf650e1661abae42b9d2f3779f38f03, type: 2}
+  arrowsprites:
+  - {fileID: 21300000, guid: 398ee1269183eb54cbe12ce18279e2e6, type: 3}
+  - {fileID: 21300000, guid: fb352acb22479ea499c0616ad6d4d8a0, type: 3}
+  - {fileID: 21300000, guid: 7179a024527db9f4b86ef85e9853803e, type: 3}
+  - {fileID: 21300000, guid: 8291ea04c8d97a340b253266acfe06b3, type: 3}
 --- !u!114 &6373124718047099805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +417,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
