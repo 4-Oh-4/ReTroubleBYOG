@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 84335948997586726, guid: 3b72ce00aa4c620418035bce0475e4d5, type: 3}
   canSpawn: 1
-  arrowSpeed: 6
+  arrowSpeed: 10
   index: 0
   frenzy: 0
 --- !u!114 &6373124718047099805
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  bar: {fileID: 0}
 --- !u!95 &5496711901008965710
 Animator:
   serializedVersion: 7
