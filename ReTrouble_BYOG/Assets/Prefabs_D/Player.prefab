@@ -322,12 +322,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   bar: {fileID: 0}
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 8492064246730764808}
   defaultMaterial: {fileID: 2100000, guid: 3609f2477fe472440a996c7a777689ad, type: 2}
   damageMaterial: {fileID: 2100000, guid: dc81bc472089e0140858037ca6716685, type: 2}
   invincibilityDuration: 5
   flickerSpeed: 0.1
-  col: {fileID: 0}
+  col: {fileID: 7286706174264300966}
 --- !u!95 &5496711901008965710
 Animator:
   serializedVersion: 7
