@@ -18,8 +18,10 @@ public class ColorTile_N : MonoBehaviour
             resetColor();
         }
         if (collision.CompareTag("FusionBubble")) {
-            if (collision.gameObject.GetComponent<DestroyBubbleFusionN>().colorIndex > 2) return;
-            else collision.gameObject.GetComponent<DestroyBubbleFusionN>().SetColor(index);
+            if (collision.gameObject.GetComponent<DestroyBubbleFusionN>().colorIndex > 2) {
+                resetColor();
+                return;
+            } else collision.gameObject.GetComponent<DestroyBubbleFusionN>().SetColor(index);
             resetColor();
         }
     }
