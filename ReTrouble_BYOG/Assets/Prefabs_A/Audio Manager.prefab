@@ -308,11 +308,11 @@ MonoBehaviour:
   SFXSource: {fileID: 3378147687048809276}
   backgroundMusic: {fileID: 8300000, guid: c9f073b6f530c00459c5a282863f8856, type: 3}
   buttonClick: {fileID: 0}
-  shoot: {fileID: 8300000, guid: 95ddca8bd5b7b1148b8613677475cee9, type: 3}
+  shoot: {fileID: 8300000, guid: 657c53db7b29cb046927d43749c71214, type: 3}
   damage: {fileID: 8300000, guid: 0331b826a5c98ee4488ee3e151d71bfc, type: 3}
   dieSound: {fileID: 8300000, guid: 13974cedfa446c6418244b5ec7c875cc, type: 3}
-  bubbleFusion: {fileID: 8300000, guid: 61a0d54b00da4e3439f5199f96eb5273, type: 3}
-  bubbleDestroy: {fileID: 8300000, guid: e9b86a3c9a04f334fb59e326b84dbbe6, type: 3}
-  bubbleFission: {fileID: 8300000, guid: 19e016d53288c8845bdb6bd8568de0aa, type: 3}
-  freezePowerUP: {fileID: 8300000, guid: 0bf8985c74861564a9e1492fe786aa8e, type: 3}
-  shieldPowerUp: {fileID: 8300000, guid: 811fbfc9be5611941a33301b7eb4f7d7, type: 3}
+  bubbleFusion: {fileID: 8300000, guid: 62b5cd525639f3f4eb8a0b710555197b, type: 3}
+  bubbleDestroy: {fileID: 8300000, guid: 2035f2b78774d95428f82fd5698edfd3, type: 3}
+  bubbleFission: {fileID: 8300000, guid: bb887de8846bb6a4b9a82f0979b61f26, type: 3}
+  freezePowerUP: {fileID: 8300000, guid: 2355b2bf85548cf4d9adee7731a7808b, type: 3}
+  shieldPowerUp: {fileID: 8300000, guid: cc2456cc23f00b140861d3df34b67660, type: 3}
