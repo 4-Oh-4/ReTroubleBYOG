@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 282350426}
   - component: {fileID: 282350428}
   - component: {fileID: 282350427}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ceiling
   m_TagString: Ceiling
   m_Icon: {fileID: 0}
@@ -1146,9 +1146,9 @@ GameObject:
   - component: {fileID: 498218915}
   - component: {fileID: 498218917}
   - component: {fileID: 498218916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: B
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 1592080511}
   - component: {fileID: 1592080513}
   - component: {fileID: 1592080512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -5492,9 +5492,9 @@ GameObject:
   - component: {fileID: 2086971344}
   - component: {fileID: 2086971346}
   - component: {fileID: 2086971345}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: B
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

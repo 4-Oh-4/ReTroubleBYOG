@@ -16,6 +16,7 @@ TagManager:
   - DestructibleObject
   - Picture
   - Shield
+  - B
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - Bubble
   - FusionBubble
   - Shield
-  - 
-  - 
+  - FusionBoundary
+  - Boundary
   - 
   - 
   - 

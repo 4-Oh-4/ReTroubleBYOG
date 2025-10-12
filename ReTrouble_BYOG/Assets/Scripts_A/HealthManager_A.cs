@@ -10,9 +10,10 @@ public class HealthManager_A : MonoBehaviour
     [SerializeField] public int maxHealth = 3;
     public int currentHealth { get; private set; }
     [SerializeField] HealthBar bar;
-
+    [SerializeField] GameObject picture;
     private Animator anim;
     private PlayerController_D playerController; AudioManager_A audioManager;
+    private Color[] colorArray = { Color.red, Color.yellow, Color.blue, Color.white };
 
     private SpawnArrow_N spawnArrow;
     private Rigidbody2D rb;
@@ -35,7 +36,7 @@ public class HealthManager_A : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
-
+        picture = GameObject.FindGameObjectWithTag("Picture");
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController_D>();
         spawnArrow = GetComponent<SpawnArrow_N>();
@@ -170,8 +171,8 @@ public class HealthManager_A : MonoBehaviour
         if (defaultMaterial != null)
         {
             spriteRenderer.enabled = true;
-
-            spriteRenderer.material = initialMaterial;
+            SpawnArrow_N spawnArrow = GetComponent<SpawnArrow_N>();
+            spriteRenderer.material = spawnArrow.materials[spawnArrow.index];
         }
     }
     public void invincibilityTurnON() {

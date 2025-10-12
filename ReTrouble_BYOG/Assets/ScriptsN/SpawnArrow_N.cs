@@ -7,7 +7,7 @@ public class SpawnArrow_N : MonoBehaviour
     [SerializeField] GameObject shootEffectPrefab; // FOOSH EFFECT
     public bool canSpawn = true;
     [SerializeField] float arrowSpeed=8f;
-    [SerializeField]private int index = 0;
+    [SerializeField]public int index = 0;
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
     [SerializeField] PlayerController_D playerController;
@@ -15,7 +15,7 @@ public class SpawnArrow_N : MonoBehaviour
     // --- Reference to other components ---
     private Animator anim;
     int initial;
-    [SerializeField] Material[] materials;
+    [SerializeField] public Material[] materials;
     [SerializeField] Sprite[] arrowsprites;
 
     AudioManager_A audioManager;
