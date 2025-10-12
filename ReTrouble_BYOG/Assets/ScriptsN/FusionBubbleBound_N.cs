@@ -10,11 +10,14 @@ public class FusionBubbleBound_N : MonoBehaviour
     {
         
     }
+    private void Update() {
 
+        if (rb.transform.position.y >= 11 || rb.transform.position.y < 2 || rb.transform.position.x < -9 || rb.transform.position.x > 9) ;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (rb.transform.position.y >= 11 || rb.transform.position.y < 2 || rb.transform.position.x < -9 || rb.transform.position.x > 9) ;
+        
         if (rb.linearVelocityX >=0) rb.linearVelocityX = 3;
         if (rb.linearVelocityX < 0) rb.linearVelocityX = -3;
         if (Mathf.Abs(rb.linearVelocityY) > 10) rb.linearVelocityY = 7;
