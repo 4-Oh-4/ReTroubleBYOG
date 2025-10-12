@@ -138,6 +138,7 @@ public class HealthManager_A : MonoBehaviour
     {
         // 1. Set the invincibility flag to true
         isInvincible = true;
+        rb.constraints=RigidbodyConstraints2D.FreezePositionY|RigidbodyConstraints2D.FreezeRotation;
         if (col != null) col.isTrigger = true;
         initialMaterial = spriteRenderer.material;
         if (damageMaterial != null)
@@ -163,6 +164,7 @@ public class HealthManager_A : MonoBehaviour
         spriteRenderer.enabled = true;
         isInvincible = false;
         if (col != null) col.isTrigger = false;
+        rb.constraints=RigidbodyConstraints2D.FreezeRotation;
 
         if (defaultMaterial != null)
         {

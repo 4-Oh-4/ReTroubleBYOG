@@ -3375,6 +3375,10 @@ PrefabInstance:
       propertyPath: bar
       value: 
       objectReference: {fileID: 813427962}
+    - target: {fileID: 6373124718047099805, guid: 6b95a3c1edf47ce44a4b96901760c150, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1722942122}
     - target: {fileID: 8492064246730764808, guid: 6b95a3c1edf47ce44a4b96901760c150, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -3503,6 +3507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b4c58e01ea3814881cc4baf121fbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1722942122 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7286706174264300966, guid: 6b95a3c1edf47ce44a4b96901760c150, type: 3}
+  m_PrefabInstance: {fileID: 1722942115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763101721
 GameObject:
   m_ObjectHideFlags: 0
