@@ -307,7 +307,7 @@ MonoBehaviour:
   musicSource: {fileID: 554240251498395280}
   SFXSource: {fileID: 3378147687048809276}
   backgroundMusic: {fileID: 8300000, guid: c9f073b6f530c00459c5a282863f8856, type: 3}
-  buttonClick: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: f32d8d60f197f204ba10bab042d4cf87, type: 3}
   shoot: {fileID: 8300000, guid: 657c53db7b29cb046927d43749c71214, type: 3}
   damage: {fileID: 8300000, guid: 0331b826a5c98ee4488ee3e151d71bfc, type: 3}
   dieSound: {fileID: 8300000, guid: 13974cedfa446c6418244b5ec7c875cc, type: 3}
