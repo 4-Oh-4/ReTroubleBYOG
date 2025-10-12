@@ -85,7 +85,7 @@ public class DestroyBubbleN : MonoBehaviour {
 
         Destroy(gameObject);
 
-        Invoke("CheckForWinCondition", 0.1f);
+        
     }
 
     private void SpawnBubble(Vector3 pos, int nextStage, int dir, float parentYVel) {
@@ -123,14 +123,6 @@ public class DestroyBubbleN : MonoBehaviour {
     }
 
 
-    void CheckForWinCondition()
-    {
-        // A delay is used so this check happens after the bubble is destroyed.
-        if (FindObjectsOfType<DestroyBubbleN>().Length <= 1) // <= 1 to account for the one being destroyed
-        {
-            // We won!
-            GameUIManager.Instance.ShowWinScreen();
-        }
-    }
+    
 
 }
