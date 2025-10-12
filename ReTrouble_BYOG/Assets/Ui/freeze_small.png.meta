@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 8fcef096dbba76745b4b991e8d5066a5
+guid: 6fa7591fde25b844fb77e78e7b18057b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1910919738546508247
-    second: in-game main UI_0
+      213: 5024309013278763556
+    second: freeze_small_0
+  - first:
+      213: -5054831810203973060
+    second: freeze_small_1
+  - first:
+      213: 827304311942712882
+    second: freeze_small_2
+  - first:
+      213: -5641444771911228748
+    second: freeze_small_3
+  - first:
+      213: -6736436285665295649
+    second: freeze_small_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: in-game main UI_0
+      name: freeze_small_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 1171
+        height: 864
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +166,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 92e27ad4f9c0b75e0800000000000000
-      internalID: -1910919738546508247
+      spriteID: 42a264a7d6ee9b540800000000000000
+      internalID: 5024309013278763556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_small_1
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 859
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a82711041a9d9b0800000000000000
+      internalID: -5054831810203973060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_small_2
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 79
+        width: 715
+        height: 710
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e8e7273ec2b7b00800000000000000
+      internalID: 827304311942712882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_small_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b22f3e9edf85b1b0800000000000000
+      internalID: -5641444771911228748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_small_4
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 0
+        width: 586
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd24edca3ee5382a0800000000000000
+      internalID: -6736436285665295649
       vertices: []
       indices: 
       edges: []
@@ -174,7 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      in-game main UI_0: -1910919738546508247
+      freeze_small_0: 5024309013278763556
+      freeze_small_1: -5054831810203973060
+      freeze_small_2: 827304311942712882
+      freeze_small_3: -5641444771911228748
+      freeze_small_4: -6736436285665295649
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
