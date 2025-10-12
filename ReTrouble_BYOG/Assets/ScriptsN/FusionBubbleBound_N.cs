@@ -12,7 +12,7 @@ public class FusionBubbleBound_N : MonoBehaviour
     }
     private void Update() {
 
-        if (rb.transform.position.y >= 11 || rb.transform.position.y < 2 || rb.transform.position.x < -9 || rb.transform.position.x > 9) ;
+        if (rb.transform.position.y >= 11 || rb.transform.position.y < 2 || rb.transform.position.x < -9 || rb.transform.position.x > 9) Destroy(gameObject);
     }
     // Update is called once per frame
     void FixedUpdate()

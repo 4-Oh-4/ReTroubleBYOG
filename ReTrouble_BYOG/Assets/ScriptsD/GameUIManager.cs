@@ -67,6 +67,7 @@ public class GameUIManager : MonoBehaviour
                 ShowWinScreen();
             }
             
+            
         }
     }
 

@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 174789235}
   - component: {fileID: 174789236}
   - component: {fileID: 174789237}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ceiling
   m_TagString: Ceiling
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 318449214}
   - component: {fileID: 318449213}
   - component: {fileID: 318449215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -597,6 +597,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a032bbf9f4d7f9439601a14154bc8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &388563539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 801368911612918048, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_Name
+      value: FusionBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666887525162138386, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017203709436826739, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14a597508c87b74ba940fc67a94c70b, type: 3}
 --- !u!1 &485990243
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +669,7 @@ GameObject:
   - component: {fileID: 485990244}
   - component: {fileID: 485990245}
   - component: {fileID: 485990246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,6 +803,10 @@ PrefabInstance:
     - target: {fileID: 801368911612918048, guid: b643aca6346fea747a893d424c7e4e0a, type: 3}
       propertyPath: m_Name
       value: NonDampingBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 801368911612918048, guid: b643aca6346fea747a893d424c7e4e0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3666887525162138386, guid: b643aca6346fea747a893d424c7e4e0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -936,7 +1001,7 @@ GameObject:
   - component: {fileID: 604213958}
   - component: {fileID: 604213959}
   - component: {fileID: 604213960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,5 +2739,6 @@ SceneRoots:
   - {fileID: 1699239773}
   - {fileID: 517033375}
   - {fileID: 37959037}
+  - {fileID: 388563539}
   - {fileID: 938232540}
   - {fileID: 6668466792369345939}

@@ -30,7 +30,9 @@ public class FusionBubble : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         // Ensure we are interacting with another bubble.
         if (!other.CompareTag("FusionBubble")) return;
-
+        if (other.CompareTag("B")) {
+            GetComponent<HeightAdjustmentFusion_N>().ChangeDirection();
+        }
         // Get components to check colors.
         var thisBubbleDestroyer = GetComponent<DestroyBubbleFusionN>();
         var otherBubbleDestroyer = other.GetComponent<DestroyBubbleFusionN>();
