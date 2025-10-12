@@ -30,6 +30,8 @@ public class DestroyBubbleFusionN : MonoBehaviour {
 
         // If the bubble is too small, just destroy it.
         if (currentStage >= 4) {
+
+            FXManager.Instance.SpawnPopEffect(transform.position);
             Destroy(gameObject);
             Debug.Log("FusionBallSmall Destroy: Puff");
             return;
@@ -89,6 +91,8 @@ public class DestroyBubbleFusionN : MonoBehaviour {
         // Spawn the two smaller bubbles with their determined colors.
         SpawnBubble(spawnPos+new Vector3(0,0,0), nextStage, 1, parentYVel, newColorIndex1);  // right bubble
         SpawnBubble(spawnPos+ new Vector3(0, 0, 0), nextStage, -1, parentYVel, newColorIndex2); // left bubble
+
+        FXManager.Instance.SpawnPopEffect(transform.position);
 
         Destroy(gameObject);
     }
