@@ -13,7 +13,6 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
     [SerializeField] private float maxYStage1;
     [SerializeField] private float maxYStage2;
     [SerializeField] private float maxYStage3;
-
     [Header("Deactivation Logic")]
     [SerializeField] private float YVelocityDeactivationThreshold = 0.1f;
     public bool combo = false;
@@ -101,12 +100,14 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Floor")||collision.gameObject.CompareTag("DestructibleObject")) return;
 
         if (collision.gameObject.CompareTag("Player")) {
-
+            
             //New Sheild Check
             PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
             if (player != null && player.isShielded)
             {
                 player.DisableShield();
+                GameObject powerManger = GameObject.FindGameObjectWithTag("GM");
+                powerManger.GetComponent<PowerManger_N>().disableShield();
                 //Destroy(gameObject);
                 return;
             }

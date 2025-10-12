@@ -9,7 +9,9 @@ public class PowerManger_N : MonoBehaviour
 
     [Header("Powerup Prefabs")]
     [SerializeField] private GameObject freezePowerupPrefab;
+    [SerializeField] private GameObject freezePowerupPrefabUI;
     [SerializeField] private GameObject shieldPowerupPrefab;
+    [SerializeField] private GameObject shieldPowerupPrefabUI;
     private GameObject[] powerupPrefabs;
 
     [Header("Freeze Settings")]
@@ -58,6 +60,7 @@ public class PowerManger_N : MonoBehaviour
     // --- Freeze Logic ---
     private IEnumerator FreezeCoroutine()
     {
+        freezePowerupPrefabUI.SetActive(true);
         freezeBool = true;
         // Find all bubbles
         BubbleHeightAdjustment_N[] bubbles = FindObjectsOfType<BubbleHeightAdjustment_N>();
@@ -97,11 +100,15 @@ public class PowerManger_N : MonoBehaviour
                 bubble.Unfreeze();
             }
         }
+        freezePowerupPrefabUI.SetActive(false);
+
     }
 
     // --- Shield Logic ---
     private void ActivateShield()
     {
+        shieldPowerupPrefabUI.SetActive(true);
+
         ShieldBool = true;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -118,5 +125,10 @@ public class PowerManger_N : MonoBehaviour
             int randomIndex = Random.Range(0, powerupPrefabs.Length);
             Instantiate(powerupPrefabs[randomIndex], position, Quaternion.identity);
         }
+
+    }
+    public void disableShield() {
+        shieldPowerupPrefabUI.SetActive(false);
+
     }
 }

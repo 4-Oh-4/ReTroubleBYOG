@@ -28,8 +28,8 @@ public class HealthManager_A : MonoBehaviour
 
     private SpriteRenderer spriteRenderer; // Reference to the player's sprite
     private bool isInvincible = false;     // Flag to check if currently invincible
-
-
+    private Material initialMaterial;
+    [SerializeField] Collider2D col;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -131,7 +131,8 @@ public class HealthManager_A : MonoBehaviour
     {
         // 1. Set the invincibility flag to true
         isInvincible = true;
-
+        if (col != null) col.isTrigger = true;
+        initialMaterial = spriteRenderer.material;
         if (damageMaterial != null)
         {
             spriteRenderer.material = damageMaterial;
@@ -154,10 +155,11 @@ public class HealthManager_A : MonoBehaviour
         // 3. Loop is over, ensure the player is visible and no longer invincible
         spriteRenderer.enabled = true;
         isInvincible = false;
+        if (col != null) col.isTrigger = false;
 
         if (defaultMaterial != null)
         {
-            spriteRenderer.material = defaultMaterial;
+            spriteRenderer.material = initialMaterial;
         }
     }
 }
