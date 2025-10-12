@@ -17,10 +17,10 @@ public class ComboManager_N : MonoBehaviour
     [SerializeField] private TextMeshProUGUI frenzyTimerText; // NEW: UI text for the timer
     [SerializeField] bool canFrenzy = true;
     private bool isFrenzyActive = false;
-
+    [SerializeField] GameObject[] frenzymeter;
     [Header("UI Reference")]
     [SerializeField] private ComboCounterUI comboCounterUI;
-
+    private int frenzyIndex = 0;
     [Header("Combo Settings")]
     [Tooltip("How long (in seconds) the player has to hit another bubble before the combo resets.")]
     [SerializeField] private float comboResetDelay = 2.0f;
@@ -73,12 +73,14 @@ public class ComboManager_N : MonoBehaviour
         if (combo >= 2 && comboCounterUI != null) // Show and update the combo counter UI.
         {
             comboCounterUI.ShowCombo(combo);
+            if(frenzyIndex<=4)frenzymeter[frenzyIndex].SetActive(true);
+            frenzyIndex++;
         }
 
         resetCoroutine = StartCoroutine(ResetComboAfterDelay()); // // Start a new timer to reset the combo after a delay
 
 
-        if (score >= frenzyCondition && !isFrenzyActive)
+        if (frenzyIndex >= 5 && !isFrenzyActive)
         {
             if (canFrenzy) StartCoroutine(FrenzyCoroutine());
             else return;
@@ -131,7 +133,10 @@ public class ComboManager_N : MonoBehaviour
         }
 
         frenzySwitch.DisableFrenzy();
-
+        for (int i = 0; i< 5; i++) {
+            frenzymeter[i].SetActive(false);
+        }
+        frenzyIndex = 0;
         // 4. Reset score and frenzy state for game balance
         score = 0; // Reset score so player has to earn it again
         isFrenzyActive = false;
