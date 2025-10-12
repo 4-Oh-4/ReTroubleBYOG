@@ -18,6 +18,17 @@ public class HealthManager_A : MonoBehaviour
     [SerializeField]private PlayerInput playerInput;
     private bool isDead = false; // Prevents taking damage after death
 
+    [Header("Damage Effect")]
+    [SerializeField] private Material defaultMaterial;
+    [SerializeField] private Material damageMaterial;
+
+    [Header("Invincibility Settings")]
+    [SerializeField] private float invincibilityDuration = 1.5f; // How long the player is invincible
+    [SerializeField] private float flickerSpeed = 0.1f;      // How fast the player sprite blinks
+
+    private SpriteRenderer spriteRenderer; // Reference to the player's sprite
+    private bool isInvincible = false;     // Flag to check if currently invincible
+
 
     private void Awake()
     {
@@ -25,6 +36,7 @@ public class HealthManager_A : MonoBehaviour
         playerController = GetComponent<PlayerController_D>();
         spawnArrow = GetComponent<SpawnArrow_N>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Start()
     {
@@ -49,13 +61,17 @@ public class HealthManager_A : MonoBehaviour
     public void DecreaseHealth()
     {
 
-        // If already dead, don't do anything
-        if (isDead) return;
+        if (isInvincible || isDead) return;
+
+        // Standard Health Logic
         if (bar != null) bar.descreaseHealth();
         else Debug.Log(("attach healthbar"));
+
         currentHealth -= 1;
         Debug.Log("Health decreased , currentHealth = " + currentHealth);
         // Optional: Update UI here
+
+
 
 
         if (currentHealth <= 0)
@@ -64,6 +80,10 @@ public class HealthManager_A : MonoBehaviour
                 playerInput.enabled = false;
             }
             Die();
+        }
+        else
+        {
+            StartCoroutine(InvincibilityCoroutine());
         }
     }
 
@@ -106,4 +126,38 @@ public class HealthManager_A : MonoBehaviour
         GameUIManager.Instance.ShowLoseScreen();
     }
 
+
+    private IEnumerator InvincibilityCoroutine()
+    {
+        // 1. Set the invincibility flag to true
+        isInvincible = true;
+
+        if (damageMaterial != null)
+        {
+            spriteRenderer.material = damageMaterial;
+        }
+
+        // 2. Start the flickering loop
+        float timer = 0f;
+        while (timer < invincibilityDuration)
+        {
+            // Toggle sprite visibility
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+
+            // Wait for a short duration
+            yield return new WaitForSeconds(flickerSpeed);
+
+            // Increment the timer
+            timer += flickerSpeed;
+        }
+
+        // 3. Loop is over, ensure the player is visible and no longer invincible
+        spriteRenderer.enabled = true;
+        isInvincible = false;
+
+        if (defaultMaterial != null)
+        {
+            spriteRenderer.material = defaultMaterial;
+        }
+    }
 }
