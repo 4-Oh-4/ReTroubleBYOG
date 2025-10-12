@@ -43,7 +43,7 @@ public class ComboManager_N : MonoBehaviour
     }
 
     public void ResetCombo() {
-        score += combo;
+        
         combo = 0;
 
         if (comboCounterUI != null)
@@ -65,8 +65,15 @@ public class ComboManager_N : MonoBehaviour
             StopCoroutine(resetCoroutine);
         }
 
-        combo ++;
+        combo += 10;
         score += combo;
+
+        if (LevelManager.Instance != null)
+        {
+            LevelManager.Instance.AddScore(combo);
+        }
+
+
         Debug.Log("Combo: " + combo + " | Score: " + score);
         Debug.Log("I score" + score.ToString());
 
