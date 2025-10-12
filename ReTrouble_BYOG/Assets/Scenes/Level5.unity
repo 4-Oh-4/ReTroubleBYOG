@@ -3452,6 +3452,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 41919835}
+    - target: {fileID: 7733294775001298336, guid: a9780826cfbfa9b4fab189cd0cb3f26e, type: 3}
+      propertyPath: levelDuration
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
