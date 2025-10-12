@@ -13,6 +13,7 @@ public class PowerManger_N : MonoBehaviour
     [SerializeField] private GameObject shieldPowerupPrefab;
     [SerializeField] private GameObject shieldPowerupPrefabUI;
     private GameObject[] powerupPrefabs;
+    AudioManager_A audioManager;
 
     [Header("Freeze Settings")]
     [SerializeField] private float freezeDuration = 5.0f;
@@ -32,6 +33,8 @@ public class PowerManger_N : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
+
     }
 
     private void Start()
@@ -60,6 +63,8 @@ public class PowerManger_N : MonoBehaviour
     // --- Freeze Logic ---
     private IEnumerator FreezeCoroutine()
     {
+        audioManager.PlaySFX(audioManager.freezePowerUP);
+
         freezePowerupPrefabUI.SetActive(true);
         freezeBool = true;
         // Find all bubbles
@@ -108,6 +113,7 @@ public class PowerManger_N : MonoBehaviour
     private void ActivateShield()
     {
         shieldPowerupPrefabUI.SetActive(true);
+        audioManager.PlaySFX(audioManager.shieldPowerUp);
 
         ShieldBool = true;
         GameObject player = GameObject.FindGameObjectWithTag("Player");

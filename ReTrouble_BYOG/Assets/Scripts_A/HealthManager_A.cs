@@ -12,7 +12,8 @@ public class HealthManager_A : MonoBehaviour
     [SerializeField] HealthBar bar;
 
     private Animator anim;
-    private PlayerController_D playerController;
+    private PlayerController_D playerController; AudioManager_A audioManager;
+
     private SpawnArrow_N spawnArrow;
     private Rigidbody2D rb;
     [SerializeField]private PlayerInput playerInput;
@@ -29,9 +30,12 @@ public class HealthManager_A : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Reference to the player's sprite
     private bool isInvincible = false;     // Flag to check if currently invincible
     private Material initialMaterial;
+
     [SerializeField] Collider2D col;
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
+
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController_D>();
         spawnArrow = GetComponent<SpawnArrow_N>();
@@ -83,6 +87,8 @@ public class HealthManager_A : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.damage);
+
             StartCoroutine(InvincibilityCoroutine());
         }
     }
@@ -91,6 +97,7 @@ public class HealthManager_A : MonoBehaviour
     private void Die()
     {
         isDead = true;
+        audioManager.PlaySFX(audioManager.GameOver);
 
         // --- NEW: STOP ALL MOVEMENT IMMEDIATELY ---
         rb.linearVelocity = Vector2.zero;

@@ -9,6 +9,11 @@ public class DestroyBubbleN : MonoBehaviour {
     public int colorIndex = -1;
     private Color[] colorArray = { Color.red, Color.yellow, Color.blue };
     GameObject GM;
+    AudioManager_A audioManager;
+
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
+    }
     private void Start() {
         if (colorIndex == -1) {
             colorIndex = Random.Range(0, 3);
@@ -24,6 +29,7 @@ public class DestroyBubbleN : MonoBehaviour {
 
         if (currentStage >= 4) {
             Debug.Log("BallSmall Destroy: Puff");
+            audioManager.PlaySFX(audioManager.bubbleDestroy);
 
             FXManager.Instance.SpawnPopEffect(transform.position); // Spawn the pop effect
 
@@ -69,6 +75,7 @@ public class DestroyBubbleN : MonoBehaviour {
         //}
         // --- END OF TEMP CODE ---
 
+        audioManager.PlaySFX(audioManager.bubbleFission);
 
         // Spawn the two smaller bubbles
         SpawnBubble(spawnPos, nextStage, 1, parentYVel);   // right

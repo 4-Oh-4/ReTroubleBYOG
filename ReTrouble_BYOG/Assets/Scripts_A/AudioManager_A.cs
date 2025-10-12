@@ -10,6 +10,7 @@ public class AudioManager_A : MonoBehaviour
     public AudioClip buttonClick;
     public AudioClip shoot;
     public AudioClip damage;
+    public AudioClip GameOver;
     public AudioClip bubbleFusion;
     public AudioClip bubbleDestroy;
     public AudioClip bubbleFission;
@@ -24,7 +25,9 @@ public class AudioManager_A : MonoBehaviour
     }
     public void PlaySFX(AudioClip clip)
     {
-        SFXSource.PlayOneShot(clip);
+        if (clip != null)
+            SFXSource.PlayOneShot(clip);
+        else Debug.Log(clip.ToString());
     }
 }
 /*

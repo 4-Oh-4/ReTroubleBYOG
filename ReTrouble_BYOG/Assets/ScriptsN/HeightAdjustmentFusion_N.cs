@@ -29,7 +29,11 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
     // public bool canMerge = false; 
 
     private bool hasBeenInitialized = false;
+    AudioManager_A audioManager;
 
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
+    }
     private void Start() {
         if (!hasBeenInitialized) {
             Initialize(Stage, 1);
@@ -69,6 +73,8 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         if (spawnedAfterCollision) {
             //col.isTrigger = false;
             Debug.Log("FusionAnimHere");
+            audioManager.PlaySFX(audioManager.bubbleFusion);
+
             StartCoroutine(GracePeriodCoroutine());
         }
     }
