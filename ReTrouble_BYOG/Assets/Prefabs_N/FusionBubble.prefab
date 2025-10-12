@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5640473460798057813}
   - component: {fileID: 5788544801543465077}
   - component: {fileID: 120534167613944800}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FusionBubble
   m_TagString: FusionBubble
   m_Icon: {fileID: 0}
@@ -334,4 +334,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.38722152
