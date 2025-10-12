@@ -866,6 +866,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3808571445105669975, guid: 672df38c70dadf346b690598a12f1595, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3808571445105669975, guid: 672df38c70dadf346b690598a12f1595, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 3808571445105669975, guid: 672df38c70dadf346b690598a12f1595, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2643652770186641020, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 3808571445105669975, guid: 672df38c70dadf346b690598a12f1595, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1254,6 +1270,22 @@ PrefabInstance:
     - target: {fileID: 6689656709011108596, guid: 8362d183e75f29a4bbd0a9162388f4b0, type: 3}
       propertyPath: m_Name
       value: ScoreText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287871145073326755, guid: 8362d183e75f29a4bbd0a9162388f4b0, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287871145073326755, guid: 8362d183e75f29a4bbd0a9162388f4b0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 7287871145073326755, guid: 8362d183e75f29a4bbd0a9162388f4b0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2643652770186641020, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 7287871145073326755, guid: 8362d183e75f29a4bbd0a9162388f4b0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9172874066837274758, guid: 8362d183e75f29a4bbd0a9162388f4b0, type: 3}
       propertyPath: m_Pivot.x

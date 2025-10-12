@@ -5260,6 +5260,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5311498468957584627, guid: 3ab42c6e56dcdb4488a3ae9cdea77499, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 5311498468957584627, guid: 3ab42c6e56dcdb4488a3ae9cdea77499, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2643652770186641020, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 5311498468957584627, guid: 3ab42c6e56dcdb4488a3ae9cdea77499, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5427,6 +5439,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1836499095}
     m_Modifications:
+    - target: {fileID: 6114426021234838409, guid: 53463e9191072964288a23fb80c3670d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 6114426021234838409, guid: 53463e9191072964288a23fb80c3670d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2643652770186641020, guid: a82a970d45588db48bad07eb87191649, type: 2}
+    - target: {fileID: 6114426021234838409, guid: 53463e9191072964288a23fb80c3670d, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6450746268989971395, guid: 53463e9191072964288a23fb80c3670d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
