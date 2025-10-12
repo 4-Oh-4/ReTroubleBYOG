@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 84335948997586726, guid: 3b72ce00aa4c620418035bce0475e4d5, type: 3}
+  shootEffectPrefab: {fileID: 6382180965126446688, guid: 95e24697cadaf38478b9bdf18a304213, type: 3}
   canSpawn: 1
   arrowSpeed: 10
   index: 0

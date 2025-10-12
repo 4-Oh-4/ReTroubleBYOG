@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class SpawnArrow_N : MonoBehaviour
 {
     [SerializeField] GameObject arrowPrefab;
+    [SerializeField] GameObject shootEffectPrefab; // FOOSH EFFECT
     public bool canSpawn = true;
     [SerializeField] float arrowSpeed=8f;
     [SerializeField]private int index = 0;
@@ -53,12 +54,22 @@ public class SpawnArrow_N : MonoBehaviour
         {
             canSpawn = false;
 
+
+
             GameObject arrow = Instantiate(arrowPrefab);
+
             arrow.transform.position = transform.position; // Adjusted spawn point
             arrow.transform.localScale = new Vector3(1, 1, 1);
             arrow.GetComponentInChildren<SpriteRenderer>().sprite = arrowsprites[index];
             arrow.GetComponent<ArrowDestroy>().ColorIndex = index;
             arrow.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, arrowSpeed);
+
+            if (shootEffectPrefab != null)
+            {
+                // Position it slightly above the player, or wherever you want it to appear
+                Vector3 effectSpawnPosition = transform.position + new Vector3(0, 1f, 0);
+                Instantiate(shootEffectPrefab, effectSpawnPosition, Quaternion.identity);
+            }
         }
     }
     public void ChangeColorPositive(InputAction.CallbackContext context) {

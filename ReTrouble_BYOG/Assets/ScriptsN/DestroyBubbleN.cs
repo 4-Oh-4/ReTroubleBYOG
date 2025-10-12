@@ -25,6 +25,8 @@ public class DestroyBubbleN : MonoBehaviour {
         if (currentStage >= 4) {
             Debug.Log("BallSmall Destroy: Puff");
 
+            FXManager.Instance.SpawnPopEffect(transform.position); // Spawn the pop effect
+
             Destroy(gameObject);
             return;
         }
@@ -63,6 +65,8 @@ public class DestroyBubbleN : MonoBehaviour {
         // Spawn the two smaller bubbles
         SpawnBubble(spawnPos, nextStage, 1, parentYVel);   // right
         SpawnBubble(spawnPos, nextStage, -1, parentYVel);  // left
+
+        FXManager.Instance.SpawnPopEffect(transform.position); // Spawn the pop effect
 
         Destroy(gameObject);
 
