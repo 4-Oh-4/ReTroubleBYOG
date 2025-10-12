@@ -14,7 +14,7 @@ public class SpawnArrow_N : MonoBehaviour
     [SerializeField] GameObject picture;
     // --- Reference to other components ---
     private Animator anim;
-
+    int initial;
     [SerializeField] Material[] materials;
     [SerializeField] Sprite[] arrowsprites;
 
@@ -99,6 +99,7 @@ public class SpawnArrow_N : MonoBehaviour
     }
     public void EnableFrenzy() {
         frenzy = true;
+        initial = index;
         index = 3;
         //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
         gameObject.GetComponent<SpriteRenderer>().material = materials[index];
@@ -108,6 +109,7 @@ public class SpawnArrow_N : MonoBehaviour
     public void DisableFrenzy() {
         frenzy = false;
         index = Random.Range(0,3);
+        index = initial;
         //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
         gameObject.GetComponent<SpriteRenderer>().material = materials[index];
         picture.GetComponent<SpriteRenderer>().material = materials[index];

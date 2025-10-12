@@ -105,6 +105,7 @@ public class BubbleHeightAdjustment_N : MonoBehaviour {
             PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
             if (player != null && player.isShielded)
             {
+                player.gameObject.GetComponent<HealthManager_A>().invincibilityTurnON();
                 player.DisableShield();
                 GameObject powerManger = GameObject.FindGameObjectWithTag("GM");
                 powerManger.GetComponent<PowerManger_N>().disableShield();

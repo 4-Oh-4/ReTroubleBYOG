@@ -15,6 +15,7 @@ TagManager:
   - Audio
   - DestructibleObject
   - Picture
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - Bubble
   - FusionBubble
-  - 
+  - Shield
   - 
   - 
   - 
