@@ -59,6 +59,15 @@ public class GameUIManager : MonoBehaviour
                 PauseGame();
             }
         }
+        {
+            // A delay is used so this check happens after the bubble is destroyed.
+            if (FindObjectsOfType<DestroyBubbleN>().Length == 0&& FindObjectsOfType<DestroyBubbleFusionN>().Length == 0) // <= 1 to account for the one being destroyed
+            {
+                // We won!
+                ShowWinScreen();
+            }
+            
+        }
     }
 
     // --- Core UI Control Functions ---
