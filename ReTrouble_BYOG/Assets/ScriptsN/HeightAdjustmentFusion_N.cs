@@ -135,8 +135,12 @@ public class HeightAdjustmentFusion_N : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player")) {
             PlayerController_D player = collision.gameObject.GetComponent<PlayerController_D>();
             if (player != null && player.isShielded) {
+                player.gameObject.GetComponent<HealthManager_A>().invincibilityTurnON();
+
                 player.DisableShield();
                 GameObject powerManger = GameObject.FindGameObjectWithTag("GM");
+
+                //rb.AddForce(new Vector2(0,3f), ForceMode2D.Impulse);
                 powerManger.GetComponent<PowerManger_N>().disableShield();
                 //Destroy(gameObject);
                 return;

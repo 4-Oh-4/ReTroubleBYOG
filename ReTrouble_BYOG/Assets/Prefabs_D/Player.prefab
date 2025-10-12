@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5011289480179808624}
   - component: {fileID: 6373124718047099805}
   - component: {fileID: 5496711901008965710}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -298,6 +298,7 @@ MonoBehaviour:
   index: 0
   frenzy: 0
   playerController: {fileID: 0}
+  picture: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 5917a5649390cc34fa389e6e11cadefe, type: 2}
   - {fileID: 2100000, guid: 507ebfb8d833e534a93dab5de27bbf15, type: 2}
@@ -360,9 +361,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7794681120940778149}
   - component: {fileID: 2346436538409836415}
+  - component: {fileID: 8086516892563403196}
   m_Layer: 8
   m_Name: ShieldVisual
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -425,7 +427,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 11
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -437,6 +439,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8086516892563403196
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886784124215069141}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.16190432, y: -0.1599808}
+  m_Radius: 0.3190882
 --- !u!1 &8142191370130125327
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6984377918183205054}
   - component: {fileID: 4238323313341037599}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

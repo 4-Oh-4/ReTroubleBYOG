@@ -171,4 +171,8 @@ public class HealthManager_A : MonoBehaviour
             spriteRenderer.material = initialMaterial;
         }
     }
+    public void invincibilityTurnON() {
+        StartCoroutine(InvincibilityCoroutine());
+
+    }
 }
