@@ -140,6 +140,7 @@ public class HealthManager_A : MonoBehaviour
         isInvincible = true;
         if (col != null) col.isTrigger = true;
         initialMaterial = spriteRenderer.material;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         if (damageMaterial != null)
         {
             spriteRenderer.material = damageMaterial;
@@ -162,6 +163,8 @@ public class HealthManager_A : MonoBehaviour
         // 3. Loop is over, ensure the player is visible and no longer invincible
         spriteRenderer.enabled = true;
         isInvincible = false;
+        rb.constraints =  RigidbodyConstraints2D.FreezeRotation;
+
         if (col != null) col.isTrigger = false;
 
         if (defaultMaterial != null)
