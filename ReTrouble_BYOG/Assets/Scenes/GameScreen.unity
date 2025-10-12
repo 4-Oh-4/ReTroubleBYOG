@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SheildPowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 8712976444381605628, guid: 5888ae91c517bc14f8609e4b00f11eee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -553,7 +557,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerUp: 0
   freezePowerupPrefab: {fileID: 2551447472886066647, guid: f15d5ce1bf499304fb5b2c9835a8a639, type: 3}
+  freezePowerupPrefabUI: {fileID: 0}
   shieldPowerupPrefab: {fileID: 8712976444381605628, guid: 5888ae91c517bc14f8609e4b00f11eee, type: 3}
+  shieldPowerupPrefabUI: {fileID: 0}
   freezeDuration: 5
   freezeTimerText: {fileID: 1307968503}
   freezeBool: 0
@@ -577,6 +583,7 @@ MonoBehaviour:
   frenzyDuration: 10
   frenzyTimerText: {fileID: 1195011213}
   canFrenzy: 1
+  frenzymeter: []
   comboCounterUI: {fileID: 1342289944}
   comboResetDelay: 2
 --- !u!114 &377349775 stripped

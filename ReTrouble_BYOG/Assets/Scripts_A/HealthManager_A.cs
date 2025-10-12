@@ -97,7 +97,7 @@ public class HealthManager_A : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        audioManager.PlaySFX(audioManager.GameOver);
+        audioManager.PlaySFX(audioManager.dieSound);
 
         // --- NEW: STOP ALL MOVEMENT IMMEDIATELY ---
         rb.linearVelocity = Vector2.zero;

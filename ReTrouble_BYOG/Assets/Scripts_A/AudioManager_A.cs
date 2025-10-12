@@ -10,7 +10,7 @@ public class AudioManager_A : MonoBehaviour
     public AudioClip buttonClick;
     public AudioClip shoot;
     public AudioClip damage;
-    public AudioClip GameOver;
+    public AudioClip dieSound;
     public AudioClip bubbleFusion;
     public AudioClip bubbleDestroy;
     public AudioClip bubbleFission;
