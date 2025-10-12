@@ -18,6 +18,14 @@ public class ComboManager_N : MonoBehaviour
     [SerializeField] bool canFrenzy = true;
     private bool isFrenzyActive = false;
 
+    [Header("UI Reference")]
+    [SerializeField] private ComboCounterUI comboCounterUI;
+
+    [Header("Combo Settings")]
+    [Tooltip("How long (in seconds) the player has to hit another bubble before the combo resets.")]
+    [SerializeField] private float comboResetDelay = 2.0f;
+    private Coroutine resetCoroutine;
+
 
 
     private void Start()
@@ -27,11 +35,22 @@ public class ComboManager_N : MonoBehaviour
         {
             frenzyTimerText.gameObject.SetActive(false);
         }
+
+        if (comboCounterUI != null)
+        {
+            comboCounterUI.gameObject.SetActive(false);
+        }
     }
 
     public void ResetCombo() {
         score += combo;
-        combo = 1;
+        combo = 0;
+
+        if (comboCounterUI != null)
+        {
+            comboCounterUI.gameObject.SetActive(false);
+        }
+
         Debug.Log(" Reset score" + score.ToString());
         if (score >= frenzyCondition && !isFrenzyActive) {
             // Instead of just enabling, we now start the timer coroutine
@@ -40,9 +59,25 @@ public class ComboManager_N : MonoBehaviour
         }
     }
     public void IncreaseCombo() {
+
+        if (resetCoroutine != null)
+        {
+            StopCoroutine(resetCoroutine);
+        }
+
         combo ++;
         score += combo;
+        Debug.Log("Combo: " + combo + " | Score: " + score);
         Debug.Log("I score" + score.ToString());
+
+        if (combo >= 2 && comboCounterUI != null) // Show and update the combo counter UI.
+        {
+            comboCounterUI.ShowCombo(combo);
+        }
+
+        resetCoroutine = StartCoroutine(ResetComboAfterDelay()); // // Start a new timer to reset the combo after a delay
+
+
         if (score >= frenzyCondition && !isFrenzyActive)
         {
             if (canFrenzy) StartCoroutine(FrenzyCoroutine());
@@ -50,6 +85,20 @@ public class ComboManager_N : MonoBehaviour
         }
     }
 
+
+    private IEnumerator ResetComboAfterDelay()
+    {
+        yield return new WaitForSeconds(comboResetDelay);
+
+        // If we reach this point, the player waited too long. Reset everything.
+        combo = 0;
+
+        if (comboCounterUI != null)
+        {
+            comboCounterUI.Hide();
+        }
+        Debug.Log("Combo Reset due to timeout.");
+    }
 
     private IEnumerator FrenzyCoroutine()
     {

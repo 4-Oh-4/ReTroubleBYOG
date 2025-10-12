@@ -75,12 +75,17 @@ public class DestroyBubbleFusionN : MonoBehaviour {
 
         // --- END OF MODIFIED LOGIC ---
 
-        // Combo and Power-up logic (unchanged)
-        if (bubbleHeight.combo) {
-            GM.GetComponent<ComboManager_N>().IncreaseCombo();
-        } else {
-            GM.GetComponent<ComboManager_N>().ResetCombo();
-        }
+        //------------------ RULED OUT ----------------------------------
+        //if (bubbleHeight.combo) {
+        //    GM.GetComponent<ComboManager_N>().IncreaseCombo();
+        //} else {
+        //    GM.GetComponent<ComboManager_N>().ResetCombo();
+        //}
+        //-------------------------------------------------------
+
+        // This is the new, simpler line
+        GM.GetComponent<ComboManager_N>().IncreaseCombo();
+
         int i = Random.Range(1, 8);
         if (i == 1 && PowerManger_N.Instance != null) {
             PowerManger_N.Instance.SpawnRandomPowerup(transform.position);
