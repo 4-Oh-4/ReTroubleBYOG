@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
     public void PlayGame()
     {
         // Loads the first playable level (assuming it's at build index 2)
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void OpenSettings()
