@@ -6,7 +6,7 @@ public class FusionBubbleBound_N : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] private Collider2D col; // --- ADD THIS LINE --- Reference to the collider
 
-    void Start()
+    void Awake()
     {
         
     }

@@ -13,7 +13,11 @@ public class DestroyBubbleFusionN : MonoBehaviour {
     // Color Array: 0:Red, 1:Green, 2:Blue, 3:Yellow, 4:Cyan, 5:Magenta
     private Color[] colorArray = { Color.red, Color.yellow, Color.blue, new Color(1f, 0.64f, 0f),new Color(0.93f, 0.51f, 0.93f), Color.green };
     private GameObject GM;
+    AudioManager_A audioManager;
 
+    private void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
+    }
     private void Start() {
         // If this bubble is being created for the first time, assign a random primary color.
         if (colorIndex == -1) {
@@ -30,6 +34,7 @@ public class DestroyBubbleFusionN : MonoBehaviour {
 
         // If the bubble is too small, just destroy it.
         if (currentStage >= 4) {
+            audioManager.PlaySFX(audioManager.bubbleDestroy);
 
             FXManager.Instance.SpawnPopEffect(transform.position);
             Destroy(gameObject);
@@ -93,6 +98,8 @@ public class DestroyBubbleFusionN : MonoBehaviour {
         }
         if (newColorIndex1 != newColorIndex2) nextStage--;
         Debug.Log("breaking");
+        audioManager.PlaySFX(audioManager.bubbleFission);
+
         // Spawn the two smaller bubbles with their determined colors.
         SpawnBubble(spawnPos+new Vector3(0,0,0), nextStage, 1, parentYVel, newColorIndex1);  // right bubble
         SpawnBubble(spawnPos+ new Vector3(0, 0, 0), nextStage, -1, parentYVel, newColorIndex2); // left bubble

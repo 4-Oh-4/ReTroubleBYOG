@@ -17,9 +17,12 @@ public class SpawnArrow_N : MonoBehaviour
     [SerializeField] Material[] materials;
     [SerializeField] Sprite[] arrowsprites;
 
+    AudioManager_A audioManager;
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager_A>();
+
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController_D>();
     }
@@ -42,6 +45,8 @@ public class SpawnArrow_N : MonoBehaviour
         if (canSpawn && context.phase==InputActionPhase.Performed) {
 
             playerController.LockMovement();
+            audioManager.PlaySFX(audioManager.shoot);
+
             anim.SetTrigger("Shoot");
 
         }
