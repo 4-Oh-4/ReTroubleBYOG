@@ -306,13 +306,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 554240251498395280}
   SFXSource: {fileID: 3378147687048809276}
-  backgroundMusic: {fileID: 0}
-  run: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: c9f073b6f530c00459c5a282863f8856, type: 3}
   buttonClick: {fileID: 0}
-  shoot: {fileID: 0}
-  bounce: {fileID: 0}
-  damage: {fileID: 0}
-  bubbleFusion: {fileID: 0}
-  powerUP: {fileID: 0}
-  bubbleDestroy: {fileID: 0}
-  bubbleFission: {fileID: 0}
+  shoot: {fileID: 8300000, guid: 95ddca8bd5b7b1148b8613677475cee9, type: 3}
+  damage: {fileID: 8300000, guid: 0331b826a5c98ee4488ee3e151d71bfc, type: 3}
+  dieSound: {fileID: 8300000, guid: 13974cedfa446c6418244b5ec7c875cc, type: 3}
+  bubbleFusion: {fileID: 8300000, guid: 61a0d54b00da4e3439f5199f96eb5273, type: 3}
+  bubbleDestroy: {fileID: 8300000, guid: e9b86a3c9a04f334fb59e326b84dbbe6, type: 3}
+  bubbleFission: {fileID: 8300000, guid: 19e016d53288c8845bdb6bd8568de0aa, type: 3}
+  freezePowerUP: {fileID: 8300000, guid: 0bf8985c74861564a9e1492fe786aa8e, type: 3}
+  shieldPowerUp: {fileID: 8300000, guid: 811fbfc9be5611941a33301b7eb4f7d7, type: 3}
