@@ -14,6 +14,7 @@ TagManager:
   - FusionBubble
   - Audio
   - DestructibleObject
+  - Picture
   layers:
   - Default
   - TransparentFX
