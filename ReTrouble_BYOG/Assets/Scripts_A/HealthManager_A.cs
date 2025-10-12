@@ -49,7 +49,7 @@ public class HealthManager_A : MonoBehaviour
 
     void Update()
     {
-        
+        if (!isInvincible) spriteRenderer.enabled = true;   
     }
 
     public void IncreaseHealth()
@@ -166,6 +166,8 @@ public class HealthManager_A : MonoBehaviour
 
         if (defaultMaterial != null)
         {
+            spriteRenderer.enabled = true;
+
             spriteRenderer.material = initialMaterial;
         }
     }
