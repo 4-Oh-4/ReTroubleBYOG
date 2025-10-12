@@ -1245,23 +1245,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3399677150921638499, guid: c447885a5dc25144fb61ee6487385874, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.24750003
+      value: 0.2661399
       objectReference: {fileID: 0}
     - target: {fileID: 3399677150921638499, guid: c447885a5dc25144fb61ee6487385874, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8697333
+      value: 3.7473547
       objectReference: {fileID: 0}
     - target: {fileID: 3399677150921638499, guid: c447885a5dc25144fb61ee6487385874, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.42854494
       objectReference: {fileID: 0}
     - target: {fileID: 3399677150921638499, guid: c447885a5dc25144fb61ee6487385874, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399677150921638499, guid: c447885a5dc25144fb61ee6487385874, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399677150921638499, guid: c447885a5dc25144fb61ee6487385874, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7359446802185381324, guid: c447885a5dc25144fb61ee6487385874, type: 3}
       propertyPath: m_Name
       value: Destructible Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 8886598980250444800, guid: c447885a5dc25144fb61ee6487385874, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1901854
+      objectReference: {fileID: 0}
+    - target: {fileID: 8886598980250444800, guid: c447885a5dc25144fb61ee6487385874, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0030967593
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
