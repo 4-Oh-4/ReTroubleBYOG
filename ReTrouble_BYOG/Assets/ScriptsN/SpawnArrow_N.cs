@@ -11,7 +11,6 @@ public class SpawnArrow_N : MonoBehaviour
     private Color[] colorArray = { Color.red ,Color.yellow, Color.blue,Color.white};
     public bool frenzy = false;
     [SerializeField] PlayerController_D playerController;
-    [SerializeField] GameObject picture;
     // --- Reference to other components ---
     private Animator anim;
 
@@ -33,7 +32,6 @@ public class SpawnArrow_N : MonoBehaviour
         
 
         gameObject.GetComponent<SpriteRenderer>().material = materials[index];
-        picture.GetComponent<SpriteRenderer>().material = materials[index];
 
     }
 
@@ -84,7 +82,6 @@ public class SpawnArrow_N : MonoBehaviour
             index = (index + 1) % 3;
             //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
             gameObject.GetComponent<SpriteRenderer>().material = materials[index];
-            picture.GetComponent<SpriteRenderer>().material = materials[index];
 
         }
     }
@@ -93,7 +90,6 @@ public class SpawnArrow_N : MonoBehaviour
             index = (index - 1+3) % 3;
             //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
             gameObject.GetComponent<SpriteRenderer>().material = materials[index];
-            picture.GetComponent<SpriteRenderer>().material = materials[index];
 
         }
     }
@@ -102,7 +98,6 @@ public class SpawnArrow_N : MonoBehaviour
         index = 3;
         //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
         gameObject.GetComponent<SpriteRenderer>().material = materials[index];
-        picture.GetComponent<SpriteRenderer>().material = materials[index];
 
     }
     public void DisableFrenzy() {
@@ -110,7 +105,6 @@ public class SpawnArrow_N : MonoBehaviour
         index = Random.Range(0,3);
         //gameObject.GetComponent<SpriteRenderer>().color = colorArray[index];
         gameObject.GetComponent<SpriteRenderer>().material = materials[index];
-        picture.GetComponent<SpriteRenderer>().material = materials[index];
 
     }
 }

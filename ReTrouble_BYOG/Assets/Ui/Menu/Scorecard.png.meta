@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 7af3f0f5966c891479f25cc12e94e1bd
+guid: 038bc877a51cd664d90e94ada2adb5f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7501387830980884940
-    second: frame_0
-  - first:
-      213: -1292133977623532453
-    second: frame_1
-  - first:
-      213: 1067268738093248773
-    second: frame_2
-  - first:
-      213: 4142243115213046903
-    second: frame_3
+      213: 2927510491497732391
+    second: Scorecard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,17 +109,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frame_0
+      name: Scorecard_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 538
-        width: 404
-        height: 406
+        x: 0
+        y: 0
+        width: 1569
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc9bd0cfc784a1860800000000000000
-      internalID: 7501387830980884940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: frame_1
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 538
-        width: 406
-        height: 408
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5c698d4efa611ee0800000000000000
-      internalID: -1292133977623532453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: frame_2
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 64
-        width: 404
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5017ded3343bfce00800000000000000
-      internalID: 1067268738093248773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: frame_3
-      rect:
-        serializedVersion: 2
-        x: 552
-        y: 62
-        width: 404
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 774c49faa243c7930800000000000000
-      internalID: 4142243115213046903
+      spriteID: 72993f9084b90a820800000000000000
+      internalID: 2927510491497732391
       vertices: []
       indices: 
       edges: []
@@ -213,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      frame_0: 7501387830980884940
-      frame_1: -1292133977623532453
-      frame_2: 1067268738093248773
-      frame_3: 4142243115213046903
+      Scorecard_0: 2927510491497732391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
