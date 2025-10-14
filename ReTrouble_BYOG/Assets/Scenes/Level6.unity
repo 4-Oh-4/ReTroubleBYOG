@@ -127,6 +127,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1870978507578549760, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738332699811496686, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992675097886871266, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961639409140894297, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4761607783530080574, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -210,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 6318708352726644774, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
       propertyPath: m_Name
       value: HealthUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6494470084139729601, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7184319861088659707, guid: 85bf65ea83dd09f4e984efaedde762a7, type: 3}
       propertyPath: totalHealthBar
