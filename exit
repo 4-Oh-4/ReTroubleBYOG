@@ -1,0 +1,117 @@
+[33mcommit e3eb06c99f475141a5646788eb0b306caaceab68[m
+Merge: 1c1e0e1 5cf8ab2
+Author: DIVYNASHU SINGH <divs7835@gmail.com>
+Date:   Sun Oct 12 16:48:09 2025 +0530
+
+    Merge branch 'main' into Divi
+
+[33mcommit b053fc402c690c4d624c5ea8a2f6103e746a6067[m
+Merge: 2f70153 3550677
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 15:44:17 2025 +0530
+
+    Merge pull request #97 from 4-Oh-4/t2
+    
+    upgraded fusion bubble
+
+[33mcommit 35506777cd5d5b301e02f00056eee4b65dcd961c[m
+Author: Aadarsh Nayak <www.nayakaadarsh2005@gmail.com>
+Date:   Sun Oct 12 15:43:51 2025 +0530
+
+    upgraded fusion bubble
+
+[33mcommit e3ef5a0fb6c58e9a58fd87f4048549b865a51419[m
+Merge: c266c41 5790857
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 03:38:14 2025 +0530
+
+    Merge pull request #58 from 4-Oh-4/NYK2
+    
+    pta nhi kya kya kiya
+
+[33mcommit 579085720083eafbecd341889ef459d3cfc6efe0[m
+Author: Aadarsh Nayak <www.nayakaadarsh2005@gmail.com>
+Date:   Sun Oct 12 03:37:48 2025 +0530
+
+    pta nhi kya kya kiya
+
+[33mcommit 3838ee04c24fa300128caa21682d25f65011c24b[m
+Merge: c613b1b 35fd5b3
+Author: Aadarsh Nayak <www.nayakaadarsh2005@gmail.com>
+Date:   Sun Oct 12 02:37:16 2025 +0530
+
+    Merge branch 'main' into NYK2
+
+[33mcommit d36109e0ab0e166d6b778e7ee5c8bb75f382bd61[m
+Merge: 35fd5b3 c613b1b
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 02:37:09 2025 +0530
+
+    Merge pull request #56 from 4-Oh-4/NYK2
+    
+    Arrow changed
+
+[33mcommit c613b1b4a7252639978cef05cc57af0e1aa407f0[m
+Author: Aadarsh Nayak <www.nayakaadarsh2005@gmail.com>
+Date:   Sun Oct 12 02:35:47 2025 +0530
+
+    Arrow changed
+
+[33mcommit a5e90c1a90771095d335497300a9352365b8c49b[m
+Merge: 5f658d9 8680aa2
+Author: DIVYNASHU SINGH <divs7835@gmail.com>
+Date:   Sun Oct 12 02:16:54 2025 +0530
+
+    Merge branch 'main' into Divi
+
+[33mcommit 84f7c4a0b15f24b00852eb118d4c487b0d3641b4[m[33m ([m[1;31morigin/revert-54-t[m[33m)[m
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 02:06:32 2025 +0530
+
+    Revert "Added Materials"
+
+[33mcommit 9994770bfb7a73190c2bc3653c9515f4de341a98[m
+Merge: 77057ca 6b61993
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 02:03:37 2025 +0530
+
+    Merge pull request #54 from 4-Oh-4/t
+    
+    Added Materials
+
+[33mcommit 6b61993fce59cf3716408884c23469bfa20ca28c[m[33m ([m[1;31morigin/t[m[33m)[m
+Merge: 5074532 77057ca
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 02:03:08 2025 +0530
+
+    Merge branch 'main' into t
+
+[33mcommit 5074532e489cd81b84a2bf13bdc4801feda83fc7[m
+Author: Aadarsh Nayak <www.nayakaadarsh2005@gmail.com>
+Date:   Sun Oct 12 02:01:41 2025 +0530
+
+    Added Materials
+
+[33mcommit 77057cab33714f2a29249ae5ed8cf67f5cc611fb[m
+Merge: fdbdb44 ca33de1
+Author: DIVYNASHU SINGH <divs7835@gmail.com>
+Date:   Sun Oct 12 00:34:02 2025 +0530
+
+    Merge pull request #53 from DIVI-Hectic4U/Divi
+    
+    Minor Bug Fixes
+
+[33mcommit fdbdb44def5deffbcd02f84966a8050b705b99a8[m
+Merge: 70d6c89 b403217
+Author: Aadarsh Nayak <162596882+Nayak578@users.noreply.github.com>
+Date:   Sun Oct 12 00:27:42 2025 +0530
+
+    Merge pull request #52 from 4-Oh-4/t
+    
+    Added all in 1 shader
+
+[33mcommit b403217cd19841e14dde999c1fa83c97c8dccd62[m
+Author: Aadarsh Nayak <www.nayakaadarsh2005@gmail.com>
+Date:   Sun Oct 12 00:26:31 2025 +0530
+
+    Added all in 1 shader
